@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "langName": "Português",
+    "title": "Denison Silva — Bailarino, Coreógrafo, Professor de Dança",
+    "description": "Bailarino, coreógrafo e professor de dança em Berlim. Quinze anos em palcos do Uruguai, Argentina, Brasil, França e Alemanha."
+  },
+  "nav": {
+    "about": "Sobre",
+    "cv": "Currículo",
+    "work": "Produções",
+    "videos": "Vídeos",
+    "references": "Referências",
+    "contact": "Contato",
+    "menu": "Menu",
+    "close": "Fechar"
+  },
+  "hero": {
+    "role": "Bailarino · Coreógrafo · Professor de dança",
+    "base": "Berlim",
+    "since": "Em cena desde 2011",
+    "scroll": "Role",
+    "mute": "Silenciar o vídeo de fundo",
+    "unmute": "Ativar o som do vídeo de fundo",
+    "pause": "Pausar o vídeo de fundo",
+    "play": "Reproduzir o vídeo de fundo",
+    "pauseShort": "Pausar",
+    "playShort": "Play"
+  },
+  "about": {
+    "title": "Sobre",
+    "lead": "Quinze anos de palco, os últimos seis deles em salas de ensaio com bailarinos que estão apenas começando. É o mesmo trabalho nos dois casos: encontrar o movimento que diz a coisa.",
+    "p1": "Formei-me em São Paulo e em Vancouver e entrei no Ballet Nacional del Sodre, em Montevidéu, sob a direção de Julio Bocca, aos vinte anos. Desde então dancei em Buenos Aires, por toda a França e em cinco teatros alemães — Halberstadt, Flensburg, Detmold, Hof e Neustrelitz.",
+    "p2": "Desde 2023 meu trabalho é sobretudo coreografia e ensino: produções de noite inteira para companhias jovens, aulas de clássico e contemporâneo para crianças, adolescentes e adultos, e oficinas inclusivas em escolas e creches. Ensino em quatro idiomas e ajusto o treino a quem está na minha frente.",
+    "p3": "Disciplina primeiro, porque é ela que compra a liberdade do bailarino. Depois a narrativa. E então o que mais importa: que ele saia da sala um pouco maior do que entrou.",
+    "factsTitle": "Em resumo",
+    "born": "Nascimento",
+    "bornValue": "6 de junho de 1991",
+    "based": "Reside em",
+    "basedValue": "Berlim",
+    "languages": "Idiomas",
+    "teaches": "Ensina",
+    "teachesValue": "Clássico, neoclássico, jazz lyrical, contemporâneo",
+    "portraitAlt": "Retrato de Denison Silva"
+  },
+  "cv": {
+    "title": "Currículo",
+    "lead": "Doze trabalhos, seis países, do mais recente para o mais antigo.",
+    "filterLabel": "Mostrar",
+    "all": "Tudo",
+    "present": "hoje",
+    "director": "Direção",
+    "empty": "Ainda sem trabalhos nesta função.",
+    "download": "Baixar o currículo completo (PDF)",
+    "educationTitle": "Formação",
+    "repertoireTitle": "Obras dançadas de",
+    "roles": {
+      "dancer": "Bailarino",
+      "teacher": "Professor de dança",
+      "choreographer": "Coreógrafo"
+    },
+    "items": {
+      "tanzoffensive": "Balé clássico e dança contemporânea para turmas de idades e níveis variados, além de trabalho coreográfico em produções de noite inteira com a diretora artística Doris Neff.",
+      "tanzkompanie": "Bailarino na opereta Die Csárdásfürstin.",
+      "jungestheaterhof": "Coordenação do programa de balé, jazz e contemporâneo para mais de 80 alunos, e oficinas inclusivas para mais de 600 crianças em escolas e creches.",
+      "nyc": "Coreógrafo residente: repertório, música, luz e figurino da primeira ideia à estreia, mais o acompanhamento diário que leva os jovens bailarinos até lá.",
+      "theaterhof": "Bailarino do elenco em Die Geschöpfe des Prometheus, Ballet Blanc e nas noites de balé de câmara.",
+      "detmold": "Dançou Sacra, O Livro da Selva e os programas de gala, e criou The Beauty of Oxum para a companhia.",
+      "flensburg": "O Lago dos Cisnes, Heidi — Das Familienballett e a remontagem de O Quebra-Nozes, além de programas de gala.",
+      "halberstadt": "Repertório clássico e contemporâneo, incluindo João e Maria e Carmen.",
+      "france": "Turnê de temporada com o Ballets de France — Paris, Cannes, Nantes, Roubaix, Montpellier e Toulouse.",
+      "brazil": "Professor convidado e coreógrafo, construindo a técnica e a presença de palco de jovens bailarinos antes da mudança para a Europa.",
+      "argentina": "Bailarino do elenco sob Iñaki Urlezaga, no repertório de Frederick Ashton.",
+      "sodre": "Elenco e solista sob Julio Bocca, em obras de Balanchine, Duato, Makarova, Wainrot, Nebrada, Holmes, Bazilis e Hynd."
+    }
+  },
+  "work": {
+    "title": "Produções",
+    "lead": "A mesma carreira contada de três maneiras, porque quase todo mundo chega aqui procurando uma delas.",
+    "dancer": "Bailarino na opereta Die Csárdásfürstin (Deutsche Tanzkompanie), em produções como Die Geschöpfe des Prometheus, Ballet Blanc e noites de balé de câmara (Theater Hof), Sacra, O Livro da Selva e diversas galas de balé (Landestheater Detmold), O Lago dos Cisnes, Heidi — Das Familienballett, a remontagem de O Quebra-Nozes e programas de gala (Schleswig-Holsteinisches Landestheater Flensburg), repertório clássico e contemporâneo incluindo João e Maria e Carmen (Nordharzer Städtebundtheater Halberstadt), turnê de temporada por Paris, Cannes, Nantes, Roubaix, Montpellier e Toulouse (Ballets de France), repertório de Frederick Ashton (Ballet Nacional de Argentina, Buenos Aires) e obras de George Balanchine, Nacho Duato, Mauricio Wainrot, Vicente Nebrada, Anna-Marie Holmes, Silvia Bazilis, Natalia Makarova e Ronald Hynd como bailarino do elenco e solista (Ballet Nacional del Sodre, Montevidéu).",
+    "teacher": "Professor de balé clássico e dança contemporânea para turmas de idades e níveis variados — crianças, adolescentes e adultos — em aulas coletivas e particulares, com direção de ensaios para produções da companhia (Tanzoffensive Berlin), coordenação do programa pedagógico e artístico de balé, jazz e contemporâneo para mais de 80 alunos, além de oficinas inclusivas para mais de 600 crianças em escolas e creches (Junges Theater Hof), acompanhamento de jovens bailarinos nas exigências técnicas e artísticas de cada produção (North German Performing Arts Youth Company, Flensburg) e aulas de balé como professor convidado, desenvolvendo a técnica e a expressão de jovens bailarinos (Brasil).",
+    "choreographer": "Coreógrafo de produções de noite inteira como Sonho de uma Noite de Verão, desenvolvendo o material de movimento e contribuindo para a construção artística de cada peça (Tanzoffensive Berlin), Grüne Träume, graue Zukunft como produção de fim de ano (Junges Theater Hof), Ellis in the Wonder World Water e Spelunkerwirt como coreógrafo residente, com responsabilidade integral pelo processo criativo, do desenvolvimento do repertório aos conceitos de música, luz e figurino, com convite para a Gala de Balé de Detmold 2025 (North German Performing Arts Youth Company, Flensburg), The Beauty of Oxum criado para a companhia profissional (Landestheater Detmold) e trabalhos coreográficos como convidado com jovens bailarinos (Brasil)."
+  },
+  "videos": {
+    "title": "Vídeos",
+    "lead": "Trechos de produções e de trabalho em estúdio.",
+    "play": "Reproduzir",
+    "privacy": "Nada é carregado do YouTube ou do Vimeo antes de você apertar play.",
+    "at": "no",
+    "items": {
+      "oxum": "The Beauty of Oxum",
+      "ellis": "Ellis in the Wonder World Water",
+      "prometheus": "Die Geschöpfe des Prometheus"
+    }
+  },
+  "references": {
+    "title": "Referências",
+    "lead": "Direções e direções de balé com quem trabalhei.",
+    "onRequest": "Cartas de referência podem ser enviadas mediante solicitação.",
+    "quoteLead": "O que as direções dizem sobre trabalhar juntos."
+  },
+  "contact": {
+    "title": "Contato",
+    "lead": "Para contratações, aulas como convidado, oficinas e coreografias sob encomenda.",
+    "name": "Seu nome",
+    "email": "Seu e-mail",
+    "subjectLabel": "O assunto é",
+    "subjects": {
+      "engagement": "Uma contratação",
+      "teaching": "Aula ou oficina",
+      "choreography": "Uma obra sob encomenda",
+      "other": "Outro assunto"
+    },
+    "message": "Sua mensagem",
+    "send": "Enviar mensagem",
+    "sending": "Enviando…",
+    "sent": "Mensagem enviada. Costumo responder em até dois dias.",
+    "error": "O envio não funcionou. Escreva para {{email}} e a mensagem chega até mim.",
+    "orDirect": "Ou fale comigo direto",
+    "phone": "Telefone",
+    "emailLabel": "E-mail",
+    "location": "Local"
+  },
+  "legal": {
+    "imprint": "Impressum",
+    "privacy": "Privacidade",
+    "back": "Voltar ao site",
+    "imprintTitle": "Impressum (aviso legal)",
+    "privacyTitle": "Política de privacidade",
+    "responsible": "Informações conforme o § 5 DDG",
+    "contactHeading": "Contato",
+    "vatHeading": "Número de identificação fiscal",
+    "vatBody": "Número de identificação do IVA conforme o § 27 a da lei alemã do IVA: {{vat}}",
+    "editorialHeading": "Responsável pelo conteúdo",
+    "disputeHeading": "Resolução de litígios",
+    "disputeBody": "A Comissão Europeia disponibiliza uma plataforma de resolução de litígios em linha: ec.europa.eu/consumers/odr. Não sou obrigado nem estou disposto a participar de procedimentos de arbitragem de consumo.",
+    "creditsHeading": "Créditos",
+    "creditsBody": "Fotografia: {{photographer}}. Fotos de produção usadas com a gentil autorização dos respectivos teatros.",
+    "privacyIntro": "Este site é propositalmente pequeno. Não usa cookies, não usa analytics nem rastreamento e não carrega fontes de servidores de terceiros — as tipografias são servidas por este domínio.",
+    "privacyHostHeading": "Hospedagem e logs do servidor",
+    "privacyHostBody": "O site é hospedado pela {{host}}. Como todo servidor web, ele registra os acessos em um arquivo de log: endereço IP, horário, página solicitada, navegador e sistema operacional. Esses dados servem para operar e proteger o site (art. 6.º, n.º 1, alínea f do RGPD) e são apagados após {{logDays}} dias.",
+    "privacyFormHeading": "Formulário de contato",
+    "privacyFormBody": "O que você escreve no formulário chega até mim por e-mail para que eu possa responder (art. 6.º, n.º 1, alíneas b e f do RGPD). Guardo a mensagem até que o assunto esteja resolvido e depois a apago. Nada é repassado a terceiros.",
+    "privacyVideoHeading": "Vídeos",
+    "privacyVideoBody": "As prévias dos vídeos são imagens estáticas servidas por este domínio. Só quando você aperta play é que seu navegador se conecta ao YouTube ou ao Vimeo, que então recebem seu endereço IP e podem definir cookies segundo suas próprias políticas.",
+    "privacyRightsHeading": "Seus direitos",
+    "privacyRightsBody": "Você pode a qualquer momento saber quais dados seus eu guardo e pedir sua correção, exclusão ou limitação. Também pode se opor ao tratamento e apresentar reclamação a uma autoridade de controle — em Berlim, a Berliner Beauftragte für Datenschutz und Informationsfreiheit.",
+    "placeholder": "Preencher antes de publicar o site."
+  },
+  "footer": {
+    "tagline": "Bailarino, coreógrafo e professor de dança, Berlim.",
+    "rights": "Todos os direitos reservados.",
+    "toTop": "Voltar ao topo"
+  },
+  "lang": {
+    "label": "Idioma",
+    "en": "EN",
+    "de": "DE",
+    "pt": "PT"
+  }
+}
