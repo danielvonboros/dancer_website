@@ -1,0 +1,125 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------
+   Design tokens — monochrome by decision, not by omission.
+   State is signalled by inversion (black block / white block),
+   never by a colour accent. The only "colour" on this site is
+   whatever is playing behind the stencil in the hero.
+   --------------------------------------------------------------- */
+@theme {
+  --color-stage: #000000;   /* blackout — hero ground, footer */
+  --color-scrim: #2e2c2b;   /* poster grey — stencil letter fill */
+  --color-paper: #faf9f7;   /* programme paper — light sections */
+  --color-chalk: #8c8a85;   /* secondary text, metadata */
+  --color-rule: #d8d5cf;    /* hairlines on paper */
+
+  --font-display: 'Anton', 'Arial Narrow', 'Haettenschweiler', sans-serif;
+  --font-body: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+
+  /* perfect-fourth scale (1.333) */
+  --text-micro: 0.75rem;
+  --text-small: 0.8125rem;
+  --text-body: 1.0625rem;
+  --text-lead: 1.375rem;
+  --text-h3: 1.728rem;
+  --text-h2: 2.986rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-scrim);
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: 1.65;
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Keyboard focus stays visible everywhere, on both grounds. */
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--color-scrim);
+    color: var(--color-paper);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 0.82;
+    letter-spacing: -0.01em;
+  }
+
+  /* Wide-tracked caps are used ONLY for the big section titles,
+     the way the printed CV sets EXPERIENCE / SKILLS / EDUCATION.
+     They are never used as eyebrow labels above other headings. */
+  .section-title {
+    font-family: var(--font-body);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: var(--text-h3);
+  }
+
+  .prose-col {
+    max-width: 62ch;
+  }
+
+  .rule {
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    transition: background-size 0.25s ease;
+  }
+  .link-underline:hover {
+    background-size: 0% 1px;
+  }
+}
+
+/* The hero's single orchestrated page-load moment: the stencil
+   settles once, then nothing on this site moves unless asked to. */
+@keyframes stencil-settle {
+  from {
+    opacity: 0;
+    transform: scale(1.045);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.stencil-settle {
+  animation: stencil-settle 1100ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}

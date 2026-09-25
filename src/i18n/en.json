@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "langName": "English",
+    "title": "Denison Silva — Dancer, Choreographer, Dance Educator",
+    "description": "Dancer, choreographer and dance educator based in Berlin. Fifteen years on stages in Uruguay, Argentina, Brazil, France and Germany."
+  },
+  "nav": {
+    "about": "About",
+    "cv": "CV",
+    "work": "Productions",
+    "videos": "Videos",
+    "references": "References",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "hero": {
+    "role": "Dancer · Choreographer · Dance educator",
+    "base": "Berlin",
+    "since": "On stage since 2011",
+    "scroll": "Scroll",
+    "mute": "Mute background video",
+    "unmute": "Unmute background video",
+    "pause": "Pause background video",
+    "play": "Play background video",
+    "pauseShort": "Pause",
+    "playShort": "Play"
+  },
+  "about": {
+    "title": "About",
+    "lead": "Fifteen years on stage, and the last six of them in rehearsal rooms with dancers who are only just starting. Both are the same job: finding the movement that says the thing.",
+    "p1": "I trained in São Paulo and Vancouver and joined Ballet Nacional del Sodre in Montevideo under Julio Bocca at twenty. Since then I have danced in Buenos Aires, across France, and in five German houses — Halberstadt, Flensburg, Detmold, Hof and Neustrelitz.",
+    "p2": "Since 2023 most of my work has been choreography and teaching: evening-length productions for youth companies, classical and contemporary classes for children, teenagers and adults, and inclusive workshops in schools and daycare centres. I teach in four languages and fit the training to the dancer in front of me.",
+    "p3": "Discipline first, because discipline is what buys a dancer their freedom. Then storytelling. Then the part that matters most — that they leave the studio a little larger than they walked in.",
+    "factsTitle": "At a glance",
+    "born": "Born",
+    "bornValue": "6 June 1991",
+    "based": "Based in",
+    "basedValue": "Berlin",
+    "languages": "Languages",
+    "teaches": "Teaches",
+    "teachesValue": "Classical, neoclassical, jazz-lyrical, contemporary",
+    "portraitAlt": "Portrait of Denison Silva"
+  },
+  "cv": {
+    "title": "Curriculum vitae",
+    "lead": "Twelve engagements, six countries, most recent first.",
+    "filterLabel": "Show",
+    "all": "Everything",
+    "present": "present",
+    "director": "Director",
+    "empty": "No engagements in this role yet.",
+    "download": "Download the full CV (PDF)",
+    "educationTitle": "Training",
+    "repertoireTitle": "Danced works by",
+    "roles": {
+      "dancer": "Dancer",
+      "teacher": "Dance teacher",
+      "choreographer": "Choreographer"
+    },
+    "items": {
+      "tanzoffensive": "Classical ballet and contemporary dance for mixed-age, mixed-level groups, alongside choreographic work on evening-length productions with artistic director Doris Neff.",
+      "tanzkompanie": "Dancer in the operetta Die Csárdásfürstin.",
+      "jungestheaterhof": "Ran the ballet, jazz and contemporary programme for more than 80 students, and led inclusive workshops for over 600 children in schools and daycare centres.",
+      "nyc": "Resident choreographer: repertoire, music, lighting and costume from the first idea to opening night, plus the daily coaching that gets young dancers there.",
+      "theaterhof": "Company dancer in Die Geschöpfe des Prometheus, Ballet Blanc and the chamber-ballet evenings.",
+      "detmold": "Danced Sacra, The Jungle Book and the gala programmes, and created The Beauty of Oxum for the company.",
+      "flensburg": "Swan Lake, Heidi — Das Familienballett and the Nutcracker reprise, plus gala programmes.",
+      "halberstadt": "Classical and contemporary repertoire, including Hänsel und Gretel and Carmen.",
+      "france": "Season tour with Ballets de France — Paris, Cannes, Nantes, Roubaix, Montpellier and Toulouse.",
+      "brazil": "Guest teacher and choreographer, building the technique and stage presence of young dancers before the move to Europe.",
+      "argentina": "Company dancer under Iñaki Urlezaga, in repertoire by Frederick Ashton.",
+      "sodre": "Ensemble and soloist under Julio Bocca, in works by Balanchine, Duato, Makarova, Wainrot, Nebrada, Holmes, Bazilis and Hynd."
+    }
+  },
+  "work": {
+    "title": "Productions",
+    "lead": "The same career told three ways, because most people arrive here looking for one of them.",
+    "dancer": "Dancer in the operetta Die Csárdásfürstin (Deutsche Tanzkompanie), in productions including Die Geschöpfe des Prometheus, Ballet Blanc and chamber-ballet evening formats (Theater Hof), Sacra, The Jungle Book and various ballet galas (Landestheater Detmold), Schwanensee, Heidi — Das Familienballett, the Nutcracker reprise and gala programmes (Schleswig-Holsteinisches Landestheater Flensburg), classical and contemporary repertoire including Hänsel und Gretel and Carmen (Nordharzer Städtebundtheater Halberstadt), a season tour through Paris, Cannes, Nantes, Roubaix, Montpellier and Toulouse (Ballets de France), repertoire by Frederick Ashton (Ballet Nacional de Argentina, Buenos Aires), and works by George Balanchine, Nacho Duato, Mauricio Wainrot, Vicente Nebrada, Anna-Marie Holmes, Silvia Bazilis, Natalia Makarova and Ronald Hynd as ensemble dancer and soloist (Ballet Nacional del Sodre, Montevideo).",
+    "teacher": "Teacher of classical ballet and contemporary dance for mixed-age and mixed-level groups — children, teenagers and adults — in group and private classes, with rehearsal direction for company productions (Tanzoffensive Berlin), coordination of the pedagogical and artistic programme in ballet, jazz and contemporary dance for more than 80 students, plus inclusive workshops for over 600 children in schools and daycare centres (Junges Theater Hof), coaching of young dancers through the technical and artistic demands of each production (North German Performing Arts Youth Company, Flensburg), and guest ballet teaching developing young dancers' technical and artistic skills (Brazil).",
+    "choreographer": "Choreographer for evening-length productions including A Midsummer Night's Dream, developing movement material and contributing to the artistic development of each piece (Tanzoffensive Berlin), Grüne Träume, graue Zukunft as end-of-year production (Junges Theater Hof), Ellis in the Wonder World Water and Spelunkerwirt as resident choreographer with full responsibility for the creative process from repertoire development to music, lighting and costume concept, with an invitation to the Detmold Ballet Gala 2025 (North German Performing Arts Youth Company, Flensburg), The Beauty of Oxum created for the professional company (Landestheater Detmold), and guest choreographic work with young dancers (Brazil)."
+  },
+  "videos": {
+    "title": "Videos",
+    "lead": "Excerpts from productions and studio work.",
+    "play": "Play",
+    "privacy": "Nothing is loaded from YouTube or Vimeo until you press play.",
+    "at": "at",
+    "items": {
+      "oxum": "The Beauty of Oxum",
+      "ellis": "Ellis in the Wonder World Water",
+      "prometheus": "Die Geschöpfe des Prometheus"
+    }
+  },
+  "references": {
+    "title": "References",
+    "lead": "Directors and ballet directors I have worked under.",
+    "onRequest": "Written references are available on request — just ask.",
+    "quoteLead": "What directors say about working together."
+  },
+  "contact": {
+    "title": "Contact",
+    "lead": "For engagements, guest classes, workshops and commissioned choreography.",
+    "name": "Your name",
+    "email": "Your email",
+    "subjectLabel": "This is about",
+    "subjects": {
+      "engagement": "An engagement",
+      "teaching": "A class or workshop",
+      "choreography": "A commissioned piece",
+      "other": "Something else"
+    },
+    "message": "Your message",
+    "send": "Send message",
+    "sending": "Sending…",
+    "sent": "Message sent. I usually answer within two days.",
+    "error": "That did not send. Write to {{email}} instead and it will reach me.",
+    "orDirect": "Or reach me directly",
+    "phone": "Phone",
+    "emailLabel": "Email",
+    "location": "Location"
+  },
+  "legal": {
+    "imprint": "Imprint",
+    "privacy": "Privacy",
+    "back": "Back to the site",
+    "imprintTitle": "Imprint",
+    "privacyTitle": "Privacy",
+    "responsible": "Information under § 5 DDG",
+    "contactHeading": "Contact",
+    "vatHeading": "VAT identification number",
+    "vatBody": "VAT ID under § 27 a of the German VAT Act: {{vat}}",
+    "editorialHeading": "Responsible for editorial content",
+    "disputeHeading": "Dispute resolution",
+    "disputeBody": "The European Commission provides a platform for online dispute resolution at ec.europa.eu/consumers/odr. I am neither obliged nor willing to take part in dispute resolution proceedings before a consumer arbitration board.",
+    "creditsHeading": "Credits",
+    "creditsBody": "Photography: {{photographer}}. Production stills used by kind permission of the respective theatres.",
+    "privacyIntro": "This site is deliberately small. It sets no cookies, runs no analytics and no tracking, and loads no fonts from third-party servers — the typefaces are served from this domain.",
+    "privacyHostHeading": "Hosting and server logs",
+    "privacyHostBody": "The site is hosted by {{host}}. Like every web server, it records requests in a log file: IP address, time, the page requested, browser and operating system. That data is used to run and secure the site (Art. 6 (1) (f) GDPR) and is deleted after {{logDays}} days.",
+    "privacyFormHeading": "Contact form",
+    "privacyFormBody": "What you type into the contact form is sent to me by email so that I can answer you (Art. 6 (1) (b) and (f) GDPR). I keep it until your enquiry is settled and then delete it. It is never passed on to anyone else.",
+    "privacyVideoHeading": "Videos",
+    "privacyVideoBody": "Video previews are still images served from this domain. Only when you press play does your browser connect to YouTube or Vimeo, which then receive your IP address and may set cookies under their own privacy policies.",
+    "privacyRightsHeading": "Your rights",
+    "privacyRightsBody": "You can ask me at any time what data about you I hold, and ask for it to be corrected, deleted or restricted. You can also object to processing and complain to a supervisory authority — in Berlin that is the Berliner Beauftragte für Datenschutz und Informationsfreiheit.",
+    "placeholder": "Fill this in before the site goes live."
+  },
+  "footer": {
+    "tagline": "Dancer, choreographer and dance educator, Berlin.",
+    "rights": "All rights reserved.",
+    "toTop": "Back to top"
+  },
+  "lang": {
+    "label": "Language",
+    "en": "EN",
+    "de": "DE",
+    "pt": "PT"
+  }
+}
