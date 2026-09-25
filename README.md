@@ -5,11 +5,14 @@ educator. React 19 + TypeScript on Vite, Tailwind v4, react-i18next.
 English is the source language; German and Portuguese are translations.
 
 ```bash
-npm install
-npm run dev      # http://localhost:5173
-npm run build    # type-check, then bundle to dist/
-npm run preview  # serve the built bundle
+yarn install
+yarn dev       # http://localhost:5173
+yarn build     # type-check, then bundle to dist/
+yarn preview   # serve the built bundle
 ```
+
+Run `yarn install` once and commit the `yarn.lock` it creates — the deploy
+workflow installs with `--frozen-lockfile` and fails without it.
 
 ---
 
@@ -31,6 +34,9 @@ src/
   data/cv.ts        engagements, training, repertoire, contact details
   data/media.ts     video ids, testimonials
   data/legal.ts     everything the Impressum and privacy page print
+public/
+  api/contact.php   the contact form's backend (see below)
+  .htaccess         HTTPS, caching and headers for Apache
   i18n/en|de|pt     all copy; en.json is the source of truth
   components/
     Stencil.tsx     the wordmark cut out of a plate (see below)
@@ -54,7 +60,7 @@ role filter and the references list all read from the same array.
 ## How the hero stencil works
 
 One SVG `<mask>`: a white rectangle covering the stage, with black
-letterforms punching holes in it. The black plate is painted *through*
+letterforms punching holes in it. The black plate is painted _through_
 that mask, so the plate exists everywhere except inside the type — and
 the video underneath is visible only inside the letters.
 
@@ -81,11 +87,11 @@ instead of taking the poster's ragged setting.
 
 Drop these into `public/media/`:
 
-| file              | what it is                                            |
-| ----------------- | ----------------------------------------------------- |
-| `hero.webm`       | VP9 or AV1, the file most browsers will use           |
-| `hero.mp4`        | H.264 fallback for Safari                             |
-| `hero-poster.jpg` | first frame — shows before the video decodes          |
+| file              | what it is                                   |
+| ----------------- | -------------------------------------------- |
+| `hero.webm`       | VP9 or AV1, the file most browsers will use  |
+| `hero.mp4`        | H.264 fallback for Safari                    |
+| `hero-poster.jpg` | first frame — shows before the video decodes |
 
 Keep it 8–15 seconds, silently looping, and **under 3 MB**. It is the
 first thing that downloads. Because only the letters are transparent,
@@ -109,7 +115,7 @@ both cases, so it has to look good on its own.
 ## Before it goes live
 
 - **`src/data/legal.ts`** has three TODOs: street and house number, the
-  photographer's credit, and the hosting company. A German Impressum
+  photographer's credit, and the log retention period. A German Impressum
   without a deliverable postal address is the most common reason a
   freelance site gets an Abmahnung. A c/o address is fine; a PO box is not.
 - **VAT line.** `vat` is `undefined`, which hides the section — correct if
@@ -118,9 +124,11 @@ both cases, so it has to look good on its own.
   and the placeholder stills in `public/media/`.
 - **Photo credit.** `public/media/portrait.jpg` came out of your CV PDF.
   Check you have the right to publish it on the web, not just in a PDF.
-- **Contact form.** Set `VITE_CONTACT_ENDPOINT` to a Formspree, Basin or
-  own handler URL. With it unset the form opens the visitor's mail client,
-  which works but loses people who use webmail.
+- **Contact form.** Create the mailbox `contact@denisonsilva.com` in KAS
+  before the first real test — `contact.php` sends from and to it.
+- **Privacy page.** Conclude the AV-Vertrag in the all-inkl Members area,
+  copy the exact company name into `host` in `src/data/legal.ts`, and set
+  `logDays` to what KAS says about log retention.
 - **Testimonials.** `TESTIMONIALS` in `src/data/media.ts` is empty on
   purpose — fill it only with quotes you have written permission to
   publish. Until then the section shows the directors you worked under,
@@ -145,13 +153,81 @@ and a consent banner becomes mandatory.
 
 ---
 
-## Deploying
+## Hosting on all-inkl
 
-`npm run build` produces a fully static `dist/`. Netlify, Vercel, Cloudflare
-Pages or plain nginx all work with no configuration — the legal pages sit
-behind `#legal/imprint` and `#legal/privacy` precisely so that no rewrite
-rules are needed.
+`yarn build` produces a static `dist/` that already contains everything
+the server needs: the site, `api/contact.php` and `.htaccess`.
 
-Two things worth adding at the host: a redirect from `denisonsilva.com`
-to `www` (or the other way, pick one), and long cache headers on
-`/assets/*`, which is content-hashed.
+### One-time setup in KAS
+
+1. Point the domain at its own folder, e.g. `/denisonsilva.com/`, and set
+   PHP to 8.1 or newer for it — `contact.php` uses 8.1 syntax.
+2. Switch on the free Let's Encrypt certificate for the domain.
+3. Create the mailbox `contact@denisonsilva.com`.
+4. Create a **separate FTP user limited to that folder**. The deploy only
+   ever gets that login, so a leaked secret cannot touch anything else.
+
+### First deploy: by hand
+
+Do this once before automating it, so you know what the automation does.
+
+```bash
+yarn build
+```
+
+Upload the _contents_ of `dist/` (not the folder itself, and including
+`.htaccess`) with FileZilla or Cyberduck over FTPS into the site folder.
+Open the site, send yourself a message through the form.
+
+### Test the form handler from the terminal
+
+```bash
+curl -i -X POST https://www.denisonsilva.com/api/contact.php \
+  -H 'Content-Type: application/json' \
+  -H 'Origin: https://www.denisonsilva.com' \
+  -d '{"name":"Test","email":"you@example.com","subject":"Test","message":"Hello"}'
+```
+
+`200` means the server accepted the mail. The other answers tell you what
+failed: `403` wrong or missing Origin, `422` a field is missing or the
+email is invalid, `500` PHP could not hand the mail to the server.
+
+A `200` with no mail arriving almost always means the mailbox
+`contact@denisonsilva.com` does not exist yet, or the message is in spam.
+
+### After that: automatic
+
+`.github/workflows/deploy.yml` builds and syncs `dist/` over rsync via SSH
+on every push to `main` — the same route danielvonboros.com already uses,
+so the key is already active on this all-inkl contract and only the five
+repository secrets have to be added again (Settings → Secrets and
+variables → Actions):
+
+| Secret            | Value                                                 |
+| ----------------- | ----------------------------------------------------- |
+| `SSH_HOST`        | `wXXXXXX.kasserver.com`                               |
+| `SSH_USER`        | `ssh-wXXXXXX`                                         |
+| `SSH_PRIVATE_KEY` | the same deploy key, full PEM incl. header and footer |
+| `SSH_KNOWN_HOSTS` | output of `ssh-keyscan wXXXXXX.kasserver.com`         |
+| `SSH_TARGET`      | **this site's** document root, from KAS               |
+
+`SSH_TARGET` is the only value that differs from the other site — and the
+only one that can do damage. `rsync --delete` removes everything at the
+target that is not in `dist/`, so a document root copied from the wrong
+site would wipe that site. **Run the workflow once from the Actions tab
+with the dry-run box ticked** and read what it would delete before the
+first real push. `.well-known` is excluded so Let's Encrypt is untouched.
+
+Test through the transition domain before DNS matters:
+`denisonsilva.com.wXXXXXX.kasserver.com`.
+
+### Last: HTTPS
+
+The redirect block in `public/.htaccess` ships commented out. Activate the
+free Let's Encrypt certificate for the domain in KAS first, then uncomment
+the four lines, commit and push. The other way round the server redirects
+to a certificate that does not exist yet and the site is unreachable.
+
+Once the redirect works, change `R=302` to `R=301`. It is 302 while you
+test because browsers cache a 301 so hard that a wrong rule keeps
+redirecting even after you fix it.

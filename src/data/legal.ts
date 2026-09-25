@@ -17,6 +17,8 @@ export const LEGAL = {
   /** Who is responsible for the content — usually the same person. */
   editorial: 'Denison Silva',
   photographer: 'TODO — Name der Fotografin / des Fotografen',
-  host: 'TODO — Hosting-Anbieter, z. B. Netlify, Vercel, Hetzner',
+  /** Exact company name as it appears in your all-inkl AV-Vertrag. */
+  host: 'ALL-INKL.COM – Neue Medien Münnich',
+  /** TODO — check in KAS how long access logs are kept and set it here. */
   logDays: 7,
 } as const
