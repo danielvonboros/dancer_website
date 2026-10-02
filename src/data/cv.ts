@@ -77,7 +77,7 @@ export const ENGAGEMENTS: Engagement[] = [
     from: 2022,
     to: 2025,
     roles: ['dancer'],
-    director: 'Barbara Büse',
+    director: 'Barbara Buser',
     productions: ['Die Geschöpfe des Prometheus', 'Ballet Blanc'],
   },
   {

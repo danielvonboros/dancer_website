@@ -20,28 +20,28 @@ export interface VideoItem {
 
 export const VIDEOS: VideoItem[] = [
   {
-    key: 'oxum',
+    key: 'spelunkenwirt',
     provider: 'youtube',
-    id: 'REPLACE_ME_1',
+    id: 'TgsTypB3TiA',
     thumb: '/media/still-oxum.jpg',
-    year: 2022,
-    venue: 'Landestheater Detmold',
-  },
-  {
-    key: 'ellis',
-    provider: 'vimeo',
-    id: 'REPLACE_ME_2',
-    thumb: '/media/still-ellis.jpg',
-    year: 2024,
+    year: 2025,
     venue: 'NYC, Flensburg',
   },
   {
-    key: 'prometheus',
+    key: 'creative_process_contemporary',
     provider: 'youtube',
-    id: 'REPLACE_ME_3',
+    id: 'PpMApZN8aDg',
+    thumb: '/media/still-ellis.jpg',
+    year: 2025,
+    venue: 'NYC, Flensburg',
+  },
+  {
+    key: 'pandoras_box',
+    provider: 'youtube',
+    id: 'sbxEoqBjrKU',
     thumb: '/media/still-prometheus.jpg',
     year: 2023,
-    venue: 'Theater Hof',
+    venue: 'Centro de Artes Pavarini',
   },
 ]
 
