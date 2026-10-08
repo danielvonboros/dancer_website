@@ -200,8 +200,8 @@ export const REPERTOIRE = [
 
 export const CONTACT = {
   email: 'contact@denisonsilva.com',
-  phone: '+49 172 319 4331',
-  phoneHref: '+491723194331',
+  phone: '+49 151 44 33 74 81',
+  phoneHref: '+4915144337481',
   city: '10785 Berlin',
   site: 'www.denisonsilva.com',
   languages: ['Portuguese', 'English', 'German', 'Spanish'],

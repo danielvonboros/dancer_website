@@ -5,7 +5,7 @@ export const ENTITY = {
   postalCity: '10785 Berlin',
   country: { de: 'Deutschland', en: 'Germany', pt: 'Alemanha' },
   email: 'contact@denisonsilva.com',
-  phone: '+49 172 319 4331',
+  phone: '+49 151 44 33 74 81',
 } as const
 
 function fill(line: string, country: string): string {
