@@ -1,8 +1,8 @@
 {
   "meta": {
     "langName": "Português",
-    "title": "Denison Silva — Bailarino, Coreógrafo, Professor de Dança",
-    "description": "Bailarino, coreógrafo e professor de dança em Berlim. Quinze anos em palcos do Uruguai, Argentina, Brasil, França e Alemanha."
+    "title": "Denison Silva — Bailarino, Professor de Balé e Coreógrafo em Berlim",
+    "description": "Bailarino, professor de balé e jazz e coreógrafo em Berlim. Aulas para crianças, jovens e adultos — quinze anos de palco em cinco países."
   },
   "nav": {
     "about": "Sobre",
@@ -15,6 +15,7 @@
     "close": "Fechar"
   },
   "hero": {
+    "heading": "Denison Silva — bailarino, professor de balé e jazz e coreógrafo em Berlim",
     "role": "Bailarino · Coreógrafo · Professor de dança",
     "base": "Berlim",
     "since": "Em cena desde 2011",

@@ -42,7 +42,9 @@ export default function Hero() {
       id="top"
       className="relative isolate flex h-[100svh] min-h-[34rem] w-full flex-col justify-between overflow-hidden bg-scrim"
     >
-      <h1 className="sr-only">Denison Silva — {t('hero.role')}</h1>
+      {/* Longer than the visible role line on purpose: the h1 is what
+          search engines weigh most, so it names ballet, jazz and Berlin. */}
+      <h1 className="sr-only">{t('hero.heading')}</h1>
 
       <video
         ref={videoRef}
