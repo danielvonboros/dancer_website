@@ -1,8 +1,8 @@
 {
   "meta": {
     "langName": "Deutsch",
-    "title": "Denison Silva — Tänzer, Choreograf, Tanzpädagoge",
-    "description": "Tänzer, Choreograf und Tanzpädagoge in Berlin. Fünfzehn Jahre auf Bühnen in Uruguay, Argentinien, Brasilien, Frankreich und Deutschland."
+    "title": "Denison Silva — Balletttänzer, Ballettlehrer & Choreograf in Berlin",
+    "description": "Balletttänzer, Ballett- und Jazzlehrer und Choreograf in Berlin. Unterricht für Kinder, Jugendliche und Erwachsene — fünfzehn Jahre auf der Bühne."
   },
   "nav": {
     "about": "Über mich",
@@ -15,6 +15,7 @@
     "close": "Schließen"
   },
   "hero": {
+    "heading": "Denison Silva — Balletttänzer, Ballett- und Jazzlehrer und Choreograf in Berlin",
     "role": "Tänzer · Choreograf · Tanzpädagoge",
     "base": "Berlin",
     "since": "Auf der Bühne seit 2011",

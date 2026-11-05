@@ -1,8 +1,8 @@
 {
   "meta": {
     "langName": "English",
-    "title": "Denison Silva — Dancer, Choreographer, Dance Educator",
-    "description": "Dancer, choreographer and dance educator based in Berlin. Fifteen years on stages in Uruguay, Argentina, Brazil, France and Germany."
+    "title": "Denison Silva — Ballet Dancer, Teacher & Choreographer in Berlin",
+    "description": "Ballet dancer, ballet and jazz teacher and choreographer in Berlin. Classes for children, teens and adults — fifteen years on stage in five countries."
   },
   "nav": {
     "about": "About",
@@ -15,6 +15,7 @@
     "close": "Close"
   },
   "hero": {
+    "heading": "Denison Silva — ballet dancer, ballet and jazz teacher and choreographer in Berlin",
     "role": "Dancer · Choreographer · Dance educator",
     "base": "Berlin",
     "since": "On stage since 2011",

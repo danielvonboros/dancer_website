@@ -4,17 +4,83 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#000000" />
-    <title>Denison Silva — Dancer, Choreographer, Dance Educator</title>
+    <!-- Keep title and description identical to meta.* in src/i18n/en.json:
+         crawlers that skip JavaScript read these, the app overwrites them. -->
+    <title>Denison Silva — Ballet Dancer, Teacher &amp; Choreographer in Berlin</title>
     <meta
       name="description"
-      content="Denison Silva is a dancer, choreographer and dance educator based in Berlin, with fifteen years on stages in Uruguay, Argentina, Brazil, France and Germany."
+      content="Ballet dancer, ballet and jazz teacher and choreographer in Berlin. Classes for children, teens and adults — fifteen years on stage in five countries."
     />
     <link rel="canonical" href="https://www.denisonsilva.com/" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:type" content="profile" />
-    <meta property="og:title" content="Denison Silva — Dancer, Choreographer, Dance Educator" />
-    <meta property="og:description" content="Fifteen years on stage. Berlin-based. Ballet, contemporary, jazz-lyrical." />
+    <meta property="og:site_name" content="Denison Silva" />
+    <meta property="og:url" content="https://www.denisonsilva.com/" />
+    <meta property="og:title" content="Denison Silva — Ballet Dancer, Teacher &amp; Choreographer in Berlin" />
+    <meta property="og:description" content="Ballet dancer, ballet and jazz teacher and choreographer in Berlin. Fifteen years on stage." />
     <meta property="og:image" content="https://www.denisonsilva.com/media/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Denison Silva — the name set in large type over his portrait" />
     <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Structured data for Google: who this site is about, and which other
+         profiles belong to the same person (sameAs). -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.denisonsilva.com/#website",
+            "url": "https://www.denisonsilva.com/",
+            "name": "Denison Silva",
+            "inLanguage": ["en", "de", "pt"],
+            "about": { "@id": "https://www.denisonsilva.com/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://www.denisonsilva.com/#person",
+            "name": "Denison Silva",
+            "url": "https://www.denisonsilva.com/",
+            "image": "https://www.denisonsilva.com/media/portrait.jpg",
+            "description": "Ballet dancer, ballet and jazz teacher and choreographer in Berlin, with fifteen years on stage in Uruguay, Argentina, Brazil, France and Germany.",
+            "jobTitle": ["Ballet dancer", "Ballet and jazz teacher", "Choreographer"],
+            "knowsAbout": [
+              "Classical ballet",
+              "Neoclassical ballet",
+              "Jazz dance",
+              "Lyrical jazz",
+              "Contemporary dance",
+              "Choreography"
+            ],
+            "knowsLanguage": ["pt", "en", "de", "es"],
+            "email": "mailto:contact@denisonsilva.com",
+            "address": {
+              "@type": "PostalAddress",
+              "postalCode": "10785",
+              "addressLocality": "Berlin",
+              "addressCountry": "DE"
+            },
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Tanzoffensive Berlin",
+              "url": "https://www.tanzoffensive.com/tanzoffensive-berlin"
+            },
+            "alumniOf": [
+              { "@type": "EducationalOrganization", "name": "Centro de Artes Pavarini" },
+              { "@type": "EducationalOrganization", "name": "Pacific Dance Arts" }
+            ],
+            "sameAs": [
+              "https://www.instagram.com/denison.pereiradasilva/",
+              "https://www.theapolis.de/de/profil/denison-silva"
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
