@@ -1,14 +1,20 @@
 import { useTranslation } from 'react-i18next'
-import { LANGUAGES, type Language } from '../i18n'
+import { LANGUAGES } from '../i18n'
+import { useAlternates, useRoute } from '../route-context'
 
 /**
  * Three letters, no flags — a flag stands for a country, not a language,
  * and Portuguese here means Brazil and Portugal both. The active language
  * is marked by inversion, which is how every state on this site is shown.
+ *
+ * Each language is a real link to the same page in that language, so
+ * crawlers find every version. The choice is remembered for the next
+ * visit to the bare domain (see legacyRedirect in main.tsx).
  */
 export default function LanguageSwitcher({ tone = 'light' }: { tone?: 'light' | 'dark' }) {
-  const { t, i18n } = useTranslation()
-  const current = i18n.resolvedLanguage as Language
+  const { t } = useTranslation()
+  const { lang: current } = useRoute()
+  const paths = useAlternates()
 
   const idle = tone === 'dark' ? 'text-chalk hover:text-paper' : 'text-chalk hover:text-scrim'
   const active = tone === 'dark' ? 'bg-paper text-stage' : 'bg-scrim text-paper'
@@ -18,20 +24,29 @@ export default function LanguageSwitcher({ tone = 'light' }: { tone?: 'light' | 
       {LANGUAGES.map((lng) => {
         const isCurrent = current === lng
         return (
-          <button
+          <a
             key={lng}
-            type="button"
+            href={paths[lng]}
+            hrefLang={lng}
             lang={lng}
             aria-current={isCurrent ? 'true' : undefined}
-            onClick={() => void i18n.changeLanguage(lng)}
+            onClick={() => remember(lng)}
             className={`px-2 py-1 text-micro tracking-[0.16em] transition-colors ${
               isCurrent ? active : idle
             }`}
           >
             {t(`lang.${lng}` as const)}
-          </button>
+          </a>
         )
       })}
     </nav>
   )
+}
+
+function remember(lng: string) {
+  try {
+    localStorage.setItem('ds-lang', lng)
+  } catch {
+    // storage blocked: the link still works, the choice just isn't kept
+  }
 }

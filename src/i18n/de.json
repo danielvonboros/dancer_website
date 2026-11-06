@@ -88,10 +88,26 @@
     "privacy": "Von YouTube oder Vimeo wird nichts geladen, bevor Sie auf Abspielen drücken.",
     "at": "am",
     "items": {
-      "oxum": "The Beauty of Oxum",
-      "ellis": "Ellis in the Wonder World Water",
-      "prometheus": "Die Geschöpfe des Prometheus"
-    }
+      "spelunkenwirt": {
+        "title": "Spelunkenwirt",
+        "description": "Spelunkenwirt – ein Stück, das Denison Silva als Resident Choreograf der North German Performing Arts Youth Company (NYC) in Flensburg geschaffen hat, 2025."
+      },
+      "creative_process_contemporary": {
+        "title": "Kreativprozess im zeitgenössischen Tanz",
+        "description": "Einblick in Denison Silvas kreativen Prozess im zeitgenössischen Tanz mit den jungen Tänzerinnen und Tänzern der NYC in Flensburg, 2025."
+      },
+      "pandoras_box": {
+        "title": "Pandora’s Box: Probe",
+        "description": "Probe zu Pandora’s Box mit jungen Tänzerinnen und Tänzern am Centro de Artes Pavarini in São Paulo, Brasilien, 2023."
+      }
+    },
+    "all": "Alle Videos",
+    "open": "Zur Videoseite",
+    "more": "Weitere Videos",
+    "youtube": "Auf YouTube ansehen",
+    "year": "Jahr",
+    "place": "Ort",
+    "length": "Länge"
   },
   "references": {
     "title": "Referenzen",
@@ -157,5 +173,32 @@
     "en": "EN",
     "de": "DE",
     "pt": "PT"
+  },
+  "pages": {
+    "home": "Startseite",
+    "breadcrumb": "Navigationspfad",
+    "footerNav": "Seiten",
+    "labels": {
+      "videos": "Videos",
+      "ballet": "Ballettunterricht",
+      "contemporary": "Contemporary Dance",
+      "jazz": "Jazz Dance",
+      "private": "Privatstunden",
+      "workshops": "Workshops für Schulen",
+      "choreography": "Choreografie",
+      "dancer": "Tänzer"
+    },
+    "videos": {
+      "title": "Videos — Denison Silva, Tänzer & Choreograf",
+      "description": "Videos zu Denison Silvas Choreografien und Unterricht: Produktionen mit Jugendkompanien in Deutschland und Proben in Brasilien.",
+      "h1": "Videos: Choreografie und Proben",
+      "lead": "Ausschnitte aus Produktionen, Proben und Studioarbeit, jedes Video auf einer eigenen Seite."
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden — Denison Silva",
+      "heading": "Diese Seite gibt es nicht.",
+      "text": "Vielleicht hat sich die Adresse mit der neuen Struktur der Website geändert.",
+      "back": "Zur Startseite"
+    }
   }
 }

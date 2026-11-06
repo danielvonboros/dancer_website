@@ -1,10 +1,14 @@
 # denisonsilva.com — Apache configuration for all-inkl
 #
 # Vite copies this file from public/ into dist/, so it deploys with the
-# site. The legal pages live behind #legal/…, which means the SPA needs
-# no rewrite rules of its own.
+# site. Every page is prerendered to its own folder with an index.html
+# (/de/videos/ → de/videos/index.html), so Apache serves the pages without
+# rewrite rules, and adds the trailing slash itself when it is missing.
 
 Options -Indexes
+
+# Unknown addresses get the site's own 404 page, in the site's design.
+ErrorDocument 404 /404.html
 
 # ---- One address: https://www.denisonsilva.com ------------------------------
 # The Let's Encrypt certificate from KAS covers both denisonsilva.com and
@@ -16,6 +20,14 @@ Options -Indexes
 # to the new one. /.well-known stays reachable over plain http so KAS can
 # renew the certificate.
 RewriteEngine On
+
+# The one-page version switched language with ?lang=de / ?lang=pt on the
+# home page. Those links now go to the language's own home page.
+RewriteCond %{QUERY_STRING} (^|&)lang=(de|pt)(&|$)
+RewriteRule ^$ https://www.denisonsilva.com/%2/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)lang=en(&|$)
+RewriteRule ^$ https://www.denisonsilva.com/? [R=301,L]
+
 RewriteCond %{REQUEST_URI} !^/\.well-known/
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} !^www\. [NC]

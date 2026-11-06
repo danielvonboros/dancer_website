@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import LanguageSwitcher from './LanguageSwitcher'
 import { useScrollSpy, usePassed } from '../hooks/useScrollSpy'
+import { useRoute } from '../route-context'
+import { pagePath } from '../routes'
 import type { TKey } from '../i18n'
 
 export const SECTIONS = ['about', 'cv', 'productions', 'videos', 'references', 'contact'] as const
@@ -19,12 +21,17 @@ const LABEL = {
 /**
  * Nothing is pinned over the hero — the poster gets the whole screen.
  * The bar arrives once the hero is behind you and then stays put.
+ * Pages without a hero pass `pinned`; their section links lead back to
+ * the home page.
  */
-export default function Nav() {
+export default function Nav({ pinned = false }: { pinned?: boolean }) {
   const { t } = useTranslation()
   const active = useScrollSpy([...SECTIONS])
-  const visible = usePassed('top')
+  const passed = usePassed('top')
+  const visible = pinned || passed
   const [open, setOpen] = useState(false)
+  const route = useRoute()
+  const home = route.page === 'home' ? '' : pagePath('home', route.lang)
 
   return (
     <header
@@ -34,7 +41,7 @@ export default function Nav() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
         <a
-          href="#top"
+          href={home || '#top'}
           className="display text-[1.35rem] leading-none tracking-tight"
         >
           Denison Silva
@@ -44,7 +51,7 @@ export default function Nav() {
           {SECTIONS.map((id) => (
             <a
               key={id}
-              href={`#${id}`}
+              href={`${home}#${id}`}
               aria-current={active === id ? 'page' : undefined}
               className={`text-small transition-colors ${
                 active === id ? 'text-scrim' : 'text-chalk hover:text-scrim'
@@ -78,7 +85,7 @@ export default function Nav() {
           {SECTIONS.map((id) => (
             <a
               key={id}
-              href={`#${id}`}
+              href={`${home}#${id}`}
               onClick={() => setOpen(false)}
               className="block border-b border-rule py-3 text-body last:border-0"
             >
