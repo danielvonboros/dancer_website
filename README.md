@@ -1,14 +1,15 @@
 # denisonsilva.com
 
-Single-page site for Denison Silva — dancer, choreographer and dance
-educator. React 19 + TypeScript on Vite, Tailwind v4, react-i18next.
-English is the source language; German and Portuguese are translations.
+Site for Denison Silva — dancer, choreographer and dance educator.
+React 19 + TypeScript on Vite, Tailwind v4, react-i18next. English is the
+source language; German and Portuguese are translations, each under its
+own path (`/`, `/de/`, `/pt/`).
 
 ```bash
 yarn install
-yarn dev       # http://localhost:5173
-yarn build     # type-check, then bundle to dist/
-yarn preview   # serve the built bundle
+yarn dev       # http://localhost:5173 — draft pages included
+yarn build     # type-check, bundle, then prerender every page to dist/
+yarn preview   # serve the built site
 ```
 
 Run `yarn install` once and commit the `yarn.lock` it creates — the deploy
@@ -19,11 +20,9 @@ workflow installs with `--frozen-lockfile` and fails without it.
 ## Why Vite and not Next.js
 
 Vite and Next.js are alternative build systems, so the brief's "Vite,
-Next.js" had to resolve to one. For a single page with no server data
-and no dynamic routes, Next adds a framework without adding anything the
-site uses. If search visibility for the Impressum and privacy pages
-later matters, moving to `next export` touches two files: `App.tsx` and
-the hash routing in it. Every component below stays as it is.
+Next.js" had to resolve to one. The site has no server data, and the few
+pages it has are prerendered by a 40-line script instead of a framework
+(see "Pages, languages and prerendering").
 
 ---
 
@@ -54,6 +53,41 @@ Content is data, not markup. To add an engagement, add an entry to
 `ENGAGEMENTS` in `src/data/cv.ts` and one line under `cv.items.<id>` in
 each of the three locale files. Nothing else changes: the timeline, the
 role filter and the references list all read from the same array.
+
+---
+
+## Pages, languages and prerendering
+
+```
+src/
+  routes.ts           every page and its path in en / de / pt
+  content/pages.ts    text of the class, workshop and choreography pages
+  seo/head.ts         title, canonical, hreflang, Open Graph, JSON-LD
+  seo/sitemap.ts      sitemap.xml, generated on every build
+  entry-server.tsx    renders one route to HTML
+scripts/prerender.mjs writes dist/<path>/index.html for every route
+```
+
+`yarn build` renders each page to its own `index.html`, so the text and
+the `<head>` of every page are in the HTML itself — Google, link previews
+and AI crawlers read them without running JavaScript. In the browser the
+page then hydrates and behaves as before. Pages link to each other with
+plain `<a>` tags; there is no client-side router and Apache needs no
+rewrite rules. The language comes from the path, never from the browser.
+
+**Publishing a draft page.** The class, workshop, choreography and dancer
+pages are `draft: true` in `PAGES` (`src/routes.ts`): `yarn dev` shows
+them, `yarn build` leaves them out. Write the text in
+`src/content/pages.ts` (gaps are marked in `yarn dev`), then delete the
+`draft` flag — the page is built, listed in the sitemap and linked from
+the footer. The dancer page reuses the About, CV and References sections,
+so publish it together with a slimmer home page to avoid duplicate text.
+
+**Adding a video.** Add an entry to `VIDEOS` in `src/data/media.ts` (id,
+slug per language, upload date and length from YouTube, a 16:9 still in
+`public/media/videos/`) and `videos.items.<key>.title` / `.description`
+in the three locale files. Its own page, its card and its VideoObject
+for Google follow from that.
 
 ---
 
@@ -120,8 +154,6 @@ both cases, so it has to look good on its own.
   freelance site gets an Abmahnung. A c/o address is fine; a PO box is not.
 - **VAT line.** `vat` is `undefined`, which hides the section — correct if
   you invoice as a Kleinunternehmer under § 19 UStG. Fill it in otherwise.
-- **Videos.** Replace the three `REPLACE_ME` ids in `src/data/media.ts`
-  and the placeholder stills in `public/media/`.
 - **Photo credit.** `public/media/portrait.jpg` came out of your CV PDF.
   Check you have the right to publish it on the web, not just in a PDF.
 - **Contact form.** Create the mailbox `contact@denisonsilva.com` in KAS

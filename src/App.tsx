@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
@@ -9,41 +8,43 @@ import Videos from './components/Videos'
 import References from './components/References'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import Legal, { type LegalPage } from './components/Legal'
+import Legal from './components/Legal'
+import VideosPage from './components/VideosPage'
+import VideoPage from './components/VideoPage'
+import ContentPage from './components/ContentPage'
+import NotFound from './components/NotFound'
+import { RouteProvider } from './route-context'
+import type { Route } from './routes'
 
 /**
- * A single page with two legal sub-pages. They live behind `#legal/...`
- * rather than real paths so the site stays a static SPA that any host can
- * serve without rewrite rules — and both are still one click from every
- * screen, which is what § 5 DDG asks for.
+ * One route per URL. Every page is prerendered to its own index.html
+ * (scripts/prerender.mjs), and links between pages are plain <a> tags —
+ * the site needs no client-side router and no rewrite rules on the server.
  */
-function useLegalRoute(): LegalPage | null {
-  const [page, setPage] = useState<LegalPage | null>(read)
-
-  useEffect(() => {
-    const onChange = () => {
-      setPage(read())
-      if (read()) window.scrollTo(0, 0)
-    }
-    window.addEventListener('hashchange', onChange)
-    return () => window.removeEventListener('hashchange', onChange)
-  }, [])
-
-  return page
+export default function App({ route }: { route: Route }) {
+  return <RouteProvider route={route}>{page(route)}</RouteProvider>
 }
 
-function read(): LegalPage | null {
-  const hash = window.location.hash
-  if (hash === '#legal/imprint') return 'imprint'
-  if (hash === '#legal/privacy') return 'privacy'
-  return null
+function page(route: Route) {
+  switch (route.page) {
+    case 'home':
+      return <Home />
+    case 'videos':
+      return <VideosPage />
+    case 'video':
+      return <VideoPage video={route.video} />
+    case 'imprint':
+    case 'privacy':
+      return <Legal page={route.page} />
+    case 'notFound':
+      return <NotFound />
+    default:
+      return <ContentPage page={route.page} />
+  }
 }
 
-export default function App() {
+function Home() {
   const { t } = useTranslation()
-  const legal = useLegalRoute()
-
-  if (legal) return <Legal page={legal} />
 
   return (
     <>

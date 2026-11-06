@@ -88,10 +88,26 @@
     "privacy": "Nothing is loaded from YouTube or Vimeo until you press play.",
     "at": "at",
     "items": {
-      "oxum": "The Beauty of Oxum",
-      "ellis": "Ellis in the Wonder World Water",
-      "prometheus": "Die Geschöpfe des Prometheus"
-    }
+      "spelunkenwirt": {
+        "title": "Spelunkenwirt",
+        "description": "Spelunkenwirt, created by Denison Silva as resident choreographer of the North German Performing Arts Youth Company (NYC) in Flensburg, 2025."
+      },
+      "creative_process_contemporary": {
+        "title": "Creative process in contemporary dance",
+        "description": "A look at Denison Silva’s creative process in contemporary dance with the young dancers of the NYC in Flensburg, 2025."
+      },
+      "pandoras_box": {
+        "title": "Pandora’s Box: rehearsal",
+        "description": "Rehearsal of Pandora’s Box with young dancers at the Centro de Artes Pavarini in São Paulo, Brazil, 2023."
+      }
+    },
+    "all": "All videos",
+    "open": "Video page",
+    "more": "More videos",
+    "youtube": "Watch on YouTube",
+    "year": "Year",
+    "place": "Place",
+    "length": "Length"
   },
   "references": {
     "title": "References",
@@ -157,5 +173,32 @@
     "en": "EN",
     "de": "DE",
     "pt": "PT"
+  },
+  "pages": {
+    "home": "Home",
+    "breadcrumb": "Breadcrumb",
+    "footerNav": "Pages",
+    "labels": {
+      "videos": "Videos",
+      "ballet": "Ballet classes",
+      "contemporary": "Contemporary dance",
+      "jazz": "Jazz dance",
+      "private": "Private lessons",
+      "workshops": "Workshops for schools",
+      "choreography": "Choreography",
+      "dancer": "Dancer"
+    },
+    "videos": {
+      "title": "Videos — Denison Silva, Dancer & Choreographer",
+      "description": "Videos of Denison Silva’s choreography and teaching: productions with youth companies in Germany and rehearsals in Brazil.",
+      "h1": "Videos: choreography and rehearsals",
+      "lead": "Excerpts from productions, rehearsals and studio work, each on its own page."
+    },
+    "notFound": {
+      "title": "Page not found — Denison Silva",
+      "heading": "This page does not exist.",
+      "text": "The address may have changed when the site moved to its new structure.",
+      "back": "Go to the home page"
+    }
   }
 }

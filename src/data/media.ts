@@ -1,10 +1,17 @@
+import type { Language } from '../routes'
+
 /**
  * Video reel. `id` is the YouTube or Vimeo id — nothing is requested
  * from either platform until the visitor clicks play, so the site
  * ships no third-party cookies on load.
  *
- * Replace these with real ids; `thumb` is a local still in /public/media
- * so that even the preview image comes from your own server.
+ * `thumb` is a local still in /public/media so that even the preview
+ * image comes from your own server. Title and description per language
+ * live in src/i18n/*.json under `videos.items.<key>`.
+ *
+ * Each video also gets its own page at /videos/<slug>/ — a page where the
+ * video is the main content is what Google shows in video results.
+ * Slug pattern: <work-or-topic>-<ensemble-or-place>-<year>.
  */
 export type Provider = 'youtube' | 'vimeo'
 
@@ -16,6 +23,12 @@ export interface VideoItem {
   thumb: string
   year: number
   venue: string
+  /** last path segment of the video's own page, per language */
+  slug: Record<Language, string>
+  /** as YouTube reports it — required for Google's VideoObject */
+  uploadDate: string
+  /** length in seconds */
+  duration: number
 }
 
 export const VIDEOS: VideoItem[] = [
@@ -23,27 +36,54 @@ export const VIDEOS: VideoItem[] = [
     key: 'spelunkenwirt',
     provider: 'youtube',
     id: 'TgsTypB3TiA',
-    thumb: '/media/still-oxum.jpg',
+    thumb: '/media/videos/spelunkenwirt.jpg',
     year: 2025,
     venue: 'NYC, Flensburg',
+    slug: {
+      en: 'spelunkenwirt-nyc-flensburg-2025',
+      de: 'spelunkenwirt-nyc-flensburg-2025',
+      pt: 'spelunkenwirt-nyc-flensburg-2025',
+    },
+    uploadDate: '2025-12-09T02:37:27-08:00',
+    duration: 513,
   },
   {
     key: 'creative_process_contemporary',
     provider: 'youtube',
     id: 'PpMApZN8aDg',
-    thumb: '/media/still-ellis.jpg',
+    thumb: '/media/videos/creative-process.jpg',
     year: 2025,
     venue: 'NYC, Flensburg',
+    slug: {
+      en: 'creative-process-contemporary-nyc-flensburg-2025',
+      de: 'kreativprozess-contemporary-nyc-flensburg-2025',
+      pt: 'processo-criativo-contemporaneo-nyc-flensburg-2025',
+    },
+    uploadDate: '2025-12-09T02:37:03-08:00',
+    duration: 336,
   },
   {
     key: 'pandoras_box',
     provider: 'youtube',
     id: 'sbxEoqBjrKU',
-    thumb: '/media/still-prometheus.jpg',
+    thumb: '/media/videos/pandoras-box.jpg',
     year: 2023,
     venue: 'Centro de Artes Pavarini',
+    slug: {
+      en: 'pandoras-box-pavarini-sao-paulo-2023',
+      de: 'pandoras-box-pavarini-sao-paulo-2023',
+      pt: 'pandoras-box-pavarini-sao-paulo-2023',
+    },
+    uploadDate: '2026-03-26T02:00:57-07:00',
+    duration: 286,
   },
 ]
+
+export function watchUrl(v: VideoItem): string {
+  return v.provider === 'youtube'
+    ? `https://www.youtube.com/watch?v=${v.id}`
+    : `https://vimeo.com/${v.id}`
+}
 
 export function embedUrl(v: VideoItem): string {
   return v.provider === 'youtube'

@@ -6,19 +6,22 @@ import {
   type LegalDocument,
   type LegalSection,
 } from "../data/legal";
+import { usePagePath, useRoute } from "../route-context";
 
 export type LegalPage = "imprint" | "privacy";
 
 export default function Legal({ page }: { page: LegalPage }) {
-  const { t, i18n } = useTranslation();
-  const legal = resolveLegal(i18n.resolvedLanguage ?? "en");
+  const { t } = useTranslation();
+  const { lang } = useRoute();
+  const path = usePagePath();
+  const legal = resolveLegal(lang);
   const content = page === "imprint" ? legal.imprint : legal.privacy;
 
   return (
     <main className="min-h-screen bg-paper px-5 py-14 sm:px-8">
       <div className="mx-auto max-w-2xl">
         <div className="flex items-center justify-between gap-4">
-          <a href="#top" className="link-underline text-small">
+          <a href={path("home")} className="link-underline text-small">
             {t("legal.back")}
           </a>
           <LanguageSwitcher />

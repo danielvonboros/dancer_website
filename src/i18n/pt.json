@@ -88,10 +88,26 @@
     "privacy": "Nada é carregado do YouTube ou do Vimeo antes de você apertar play.",
     "at": "no",
     "items": {
-      "oxum": "The Beauty of Oxum",
-      "ellis": "Ellis in the Wonder World Water",
-      "prometheus": "Die Geschöpfe des Prometheus"
-    }
+      "spelunkenwirt": {
+        "title": "Spelunkenwirt",
+        "description": "Spelunkenwirt, criado por Denison Silva como coreógrafo residente da North German Performing Arts Youth Company (NYC) em Flensburg, 2025."
+      },
+      "creative_process_contemporary": {
+        "title": "Processo criativo na dança contemporânea",
+        "description": "Um olhar sobre o processo criativo de Denison Silva na dança contemporânea com os jovens bailarinos da NYC em Flensburg, 2025."
+      },
+      "pandoras_box": {
+        "title": "Pandora’s Box: ensaio",
+        "description": "Ensaio de Pandora’s Box com jovens bailarinos no Centro de Artes Pavarini, em São Paulo, 2023."
+      }
+    },
+    "all": "Todos os vídeos",
+    "open": "Página do vídeo",
+    "more": "Mais vídeos",
+    "youtube": "Ver no YouTube",
+    "year": "Ano",
+    "place": "Local",
+    "length": "Duração"
   },
   "references": {
     "title": "Referências",
@@ -157,5 +173,32 @@
     "en": "EN",
     "de": "DE",
     "pt": "PT"
+  },
+  "pages": {
+    "home": "Início",
+    "breadcrumb": "Navegação estrutural",
+    "footerNav": "Páginas",
+    "labels": {
+      "videos": "Vídeos",
+      "ballet": "Aulas de balé",
+      "contemporary": "Dança contemporânea",
+      "jazz": "Jazz dance",
+      "private": "Aulas particulares",
+      "workshops": "Oficinas para escolas",
+      "choreography": "Coreografia",
+      "dancer": "Bailarino"
+    },
+    "videos": {
+      "title": "Vídeos — Denison Silva, bailarino e coreógrafo",
+      "description": "Vídeos das coreografias e aulas de Denison Silva: espetáculos com companhias jovens na Alemanha e ensaios no Brasil.",
+      "h1": "Vídeos: coreografia e ensaios",
+      "lead": "Trechos de produções, ensaios e trabalho em estúdio, cada vídeo em sua própria página."
+    },
+    "notFound": {
+      "title": "Página não encontrada — Denison Silva",
+      "heading": "Esta página não existe.",
+      "text": "Talvez o endereço tenha mudado com a nova estrutura do site.",
+      "back": "Ir para a página inicial"
+    }
   }
 }
