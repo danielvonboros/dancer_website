@@ -19,8 +19,13 @@ export default function Videos() {
   return (
     <Section id="videos" title={t('videos.title')} note={t('videos.lead')} tone="stage">
       <div className="grid gap-8 sm:grid-cols-2">
-        {VIDEOS.map((video) => (
-          <figure key={video.key}>
+        {/* With an odd number of videos the newest spans both columns,
+            so the grid ends on a full row instead of a lone card. */}
+        {VIDEOS.map((video, index) => (
+          <figure
+            key={video.key}
+            className={index === 0 && VIDEOS.length % 2 === 1 ? 'sm:col-span-2' : undefined}
+          >
             <Facade video={video} />
             <figcaption className="mt-3 flex flex-wrap justify-between gap-x-4 gap-y-1 text-small text-chalk">
               <span>
@@ -47,10 +52,46 @@ export function videoTitle(video: VideoItem) {
   return `videos.items.${video.key}.title` as TKey
 }
 
-/** `eager` on a video's own page, where the still is the first thing in view. */
-export function Facade({ video, eager = false }: { video: VideoItem; eager?: boolean }) {
+/**
+ * The player with, where the video has one, a second button that starts
+ * it at Denison's own moment (`highlight` in src/data/media.ts). Still
+ * nothing is loaded from YouTube until one of the two is pressed.
+ */
+export function Player({ video, eager = false }: { video: VideoItem; eager?: boolean }) {
   const { t } = useTranslation()
-  const [loaded, setLoaded] = useState(false)
+  const [start, setStart] = useState<number>()
+
+  return (
+    <>
+      <Facade key={start ?? 0} video={video} eager={eager} start={start} />
+      {video.highlight !== undefined && (
+        <button
+          type="button"
+          onClick={() => setStart(video.highlight)}
+          className="mt-4 bg-paper px-3 py-1.5 text-micro tracking-[0.16em] text-stage uppercase transition-opacity hover:opacity-80"
+        >
+          ▶ {t(`videos.items.${video.key}.highlight` as TKey)}
+        </button>
+      )}
+    </>
+  )
+}
+
+/**
+ * `eager` on a video's own page, where the still is the first thing in view.
+ * A `start` second loads the player right away and plays from there.
+ */
+export function Facade({
+  video,
+  eager = false,
+  start,
+}: {
+  video: VideoItem
+  eager?: boolean
+  start?: number
+}) {
+  const { t } = useTranslation()
+  const [loaded, setLoaded] = useState(start !== undefined)
   const title = t(videoTitle(video))
 
   return (
@@ -58,7 +99,7 @@ export function Facade({ video, eager = false }: { video: VideoItem; eager?: boo
       {loaded ? (
         <iframe
           className="absolute inset-0 h-full w-full"
-          src={embedUrl(video)}
+          src={embedUrl(video, start)}
           title={title}
           allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen

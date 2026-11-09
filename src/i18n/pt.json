@@ -45,7 +45,7 @@
   },
   "cv": {
     "title": "Currículo",
-    "lead": "Doze trabalhos, seis países, do mais recente para o mais antigo.",
+    "lead": "Catorze trabalhos, sete países, do mais recente para o mais antigo.",
     "filterLabel": "Mostrar",
     "all": "Tudo",
     "present": "hoje",
@@ -60,6 +60,8 @@
       "choreographer": "Coreógrafo"
     },
     "items": {
+      "berlinballet": "Um dos Ratos na batalha da meia-noite e o Lenhador em O Quebra-Nozes no Kino Babylon, onde um filme vira balé ao vivo. Estreia mundial em 18 de dezembro de 2026.",
+      "cop17": "Bailarino do conjunto e solista no show de abertura da COP17, a Conferência da ONU sobre Biodiversidade — além da coordenação de ensaios do grupo: música, logística e viagem de Berlim a Erevan e de volta.",
       "tanzoffensive": "Balé clássico e dança contemporânea para turmas de idades e níveis variados, além de trabalho coreográfico em produções de noite inteira com a diretora artística Doris Neff.",
       "tanzkompanie": "Bailarino na opereta Die Csárdásfürstin.",
       "jungestheaterhof": "Coordenação do programa de balé, jazz e contemporâneo para mais de 80 alunos, e oficinas inclusivas para mais de 600 crianças em escolas e creches.",
@@ -88,6 +90,15 @@
     "privacy": "Nada é carregado do YouTube ou do Vimeo antes de você apertar play.",
     "at": "no",
     "items": {
+      "nutcracker_trailer": {
+        "title": "O Quebra-Nozes: trailer",
+        "description": "Trailer de O Quebra-Nozes da Berlin Ballet Company no Kino Babylon, em Berlim, com Denison Silva como um dos Ratos e o Lenhador. Estreia mundial em 18 de dezembro de 2026."
+      },
+      "cop17_opening": {
+        "title": "Show de abertura da COP17, Erevan",
+        "description": "Gravação do show de abertura da COP17, a Conferência da ONU sobre Biodiversidade, em Erevan, em 18 de outubro de 2026 — um espetáculo sobre salvar a natureza. Denison Silva dança no conjunto; seu solo começa em 9:30.",
+        "highlight": "Solo de Denison — a partir de 9:30"
+      },
       "spelunkenwirt": {
         "title": "Spelunkenwirt",
         "description": "Spelunkenwirt, criado por Denison Silva como coreógrafo residente da North German Performing Arts Youth Company (NYC) em Flensburg, 2025."
@@ -108,6 +119,52 @@
     "year": "Ano",
     "place": "Local",
     "length": "Duração"
+  },
+  "productions": {
+    "current": "Atual",
+    "open": "Sobre a produção",
+    "aboutTitle": "A produção",
+    "creditsTitle": "Elenco & equipe",
+    "creditsNote": "Conforme os créditos da produção.",
+    "date": "Data",
+    "place": "Local",
+    "website": "Página oficial",
+    "video": "Vídeo",
+    "music": "Música",
+    "items": {
+      "nutcracker": {
+        "title": "O Quebra-Nozes",
+        "metaTitle": "O Quebra-Nozes no Kino Babylon, Berlim — Denison Silva",
+        "description": "Denison Silva dança um dos Ratos e o Lenhador em O Quebra-Nozes da Berlin Ballet Company no Kino Babylon, Berlim. Estreia mundial em 18 de dezembro de 2026.",
+        "lead": "Denison Silva como um dos Ratos e como o Lenhador — em O Quebra-Nozes da Berlin Ballet Company no Kino Babylon, em Berlim.",
+        "p1": "Dois papéis em extremos opostos da noite. Como um dos Ratos, Denison luta ao lado do Rei dos Ratos quando o relógio bate meia-noite: dança de caráter rápida e precisa, em bando, em que o tempo do grupo inteiro sustenta a cena. Como o Lenhador, ele muda completamente de registro — um papel de caráter mais assentado, que pede presença e uma narrativa clara em vez de velocidade.",
+        "p2": "Ele conhece a obra por dentro: já dançou O Quebra-Nozes no Schleswig-Holsteinisches Landestheater, em Flensburg. Desta vez na cidade onde vive, numa montagem em que um filme vira balé ao vivo num cinema dos anos 1920. Coreografia de Alexander Abdukarimov e Arshak Ghalumyan; datas e ingressos estão na página da Berlin Ballet Company.",
+        "dates": "18 a 20 de dezembro de 2026",
+        "place": "Kino Babylon, Berlim",
+        "presenterLabel": "Companhia",
+        "role": "Bailarino — Mice, The Woodcutter"
+      },
+      "cop17": {
+        "title": "Show de abertura da COP17",
+        "metaTitle": "Denison Silva no show de abertura da COP17, Erevan 2026",
+        "description": "Denison Silva dançou no conjunto e um solo no show de abertura da COP17 em Erevan, em 18 de outubro de 2026 — um espetáculo sobre salvar a natureza. Fotos, vídeo, créditos.",
+        "lead": "Conjunto, um solo e a coordenação de ensaios do grupo: Denison Silva no show de abertura da Conferência da ONU sobre Biodiversidade em Erevan, 18 de outubro de 2026.",
+        "p1": "O espetáculo falava de salvar a natureza — e de como a humanidade surgiu. Mostrava como tratamos o planeta hoje: consumindo seus recursos e destruindo-o, porque o ser humano só pensa em si mesmo e não nos outros, na natureza e nos animais.",
+        "p2": "Denison dançou no conjunto e apresentou um solo próprio, que começa em 9:30 na gravação abaixo. Fora do palco, assumiu a coordenação de ensaios (Rehearsal Coordination Studio) do grupo de Berlim: a música, a logística e a viagem dos bailarinos até Erevan e de volta.",
+        "dates": "18 de outubro de 2026",
+        "place": "Erevan, Armênia",
+        "presenterLabel": "Ocasião",
+        "role": "Bailarino do conjunto, solista, coordenação de ensaios",
+        "photos": {
+          "armsOutstretched": "Denison Silva com um figurino semitransparente, braços bem abertos, o conjunto em formação em V ao fundo — show de abertura da COP17, Erevan 2026",
+          "splitLeap": "Denison Silva num salto em espacate no ar, enquanto os outros bailarinos se ajoelham ao redor do palco — show de abertura da COP17, Erevan 2026",
+          "ensemblePyramid": "O conjunto do show de abertura da COP17 agrupado em pirâmide, Denison Silva embaixo à esquerda — Erevan 2026",
+          "soloLily": "Solo de Denison Silva: um braço para cima, o outro estendido para trás, o conjunto ajoelhado ao seu redor, luz branca intensa e um grande lírio no cenário — show de abertura da COP17, Erevan 2026"
+        }
+      }
+    },
+    "photos": "Fotos",
+    "photo": "Abrir foto"
   },
   "references": {
     "title": "Referências",

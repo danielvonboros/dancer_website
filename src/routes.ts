@@ -1,4 +1,5 @@
 import { VIDEOS, type VideoItem } from './data/media'
+import { PRODUCTIONS, type Production } from './data/productions'
 
 export const LANGUAGES = ['en', 'de', 'pt'] as const
 export type Language = (typeof LANGUAGES)[number]
@@ -84,7 +85,18 @@ export const PAGES: Record<PageId, PageDef> = {
 export type Route =
   | { page: PageId; lang: Language }
   | { page: 'video'; lang: Language; video: VideoItem }
+  | { page: 'production'; lang: Language; production: Production }
   | { page: 'notFound'; lang: Language }
+
+/**
+ * Folder the production pages live in. There is no page at the folder
+ * itself — the CV on the home page is the list of productions.
+ */
+const PRODUCTIONS_DIR: Record<Language, string> = {
+  en: 'productions',
+  de: 'produktionen',
+  pt: 'producoes',
+}
 
 /** Every path ends in a slash: each page is a folder with an index.html. */
 export function pagePath(page: PageId, lang: Language): string {
@@ -96,8 +108,13 @@ export function videoPath(video: VideoItem, lang: Language): string {
   return `${pagePath('videos', lang)}${video.slug[lang]}/`
 }
 
+export function productionPath(production: Production, lang: Language): string {
+  return `${PREFIX[lang]}/${PRODUCTIONS_DIR[lang]}/${production.slug[lang]}/`
+}
+
 export function routePath(route: Route): string {
   if (route.page === 'video') return videoPath(route.video, route.lang)
+  if (route.page === 'production') return productionPath(route.production, route.lang)
   if (route.page === 'notFound') return '/404.html'
   return pagePath(route.page, route.lang)
 }
@@ -117,7 +134,7 @@ export function isLive(page: PageId): boolean {
 
 export function isIndexable(route: Route): boolean {
   if (route.page === 'notFound') return false
-  if (route.page === 'video') return true
+  if (route.page === 'video' || route.page === 'production') return true
   return !PAGES[route.page].noindex
 }
 
@@ -127,6 +144,7 @@ export function allRoutes(): Route[] {
   return LANGUAGES.flatMap((lang): Route[] => [
     ...pages.map((page) => ({ page, lang })),
     ...VIDEOS.map((video) => ({ page: 'video' as const, lang, video })),
+    ...PRODUCTIONS.map((production) => ({ page: 'production' as const, lang, production })),
   ])
 }
 
@@ -143,15 +161,25 @@ export function resolve(pathname: string): Route {
 /** What the prerender hands to the browser, so it hydrates the same route. */
 export function serializeRoute(route: Route): string {
   const video = route.page === 'video' ? route.video.key : undefined
-  return JSON.stringify({ page: route.page, lang: route.lang, video })
+  const production = route.page === 'production' ? route.production.key : undefined
+  return JSON.stringify({ page: route.page, lang: route.lang, video, production })
 }
 
 export function parseRoute(json: string): Route | null {
   try {
-    const { page, lang, video } = JSON.parse(json) as { page: string; lang: Language; video?: string }
+    const { page, lang, video, production } = JSON.parse(json) as {
+      page: string
+      lang: Language
+      video?: string
+      production?: string
+    }
     if (page === 'video') {
       const item = VIDEOS.find((v) => v.key === video)
       return item ? { page, lang, video: item } : null
+    }
+    if (page === 'production') {
+      const item = PRODUCTIONS.find((p) => p.key === production)
+      return item ? { page, lang, production: item } : null
     }
     if (page === 'notFound') return { page, lang }
     return page in PAGES ? { page: page as PageId, lang } : null

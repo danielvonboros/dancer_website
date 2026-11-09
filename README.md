@@ -89,6 +89,16 @@ slug per language, upload date and length from YouTube, a 16:9 still in
 in the three locale files. Its own page, its card and its VideoObject
 for Google follow from that.
 
+**Adding a production.** Add an entry to `PRODUCTIONS` in
+`src/data/productions.ts` (slug per language, dates, venue, credits,
+optionally a video key and `currentUntil` for the "Current" mark) and
+`productions.items.<key>` in the three locale files. Point its CV entry
+in `src/data/cv.ts` at it with `production: '<key>'`. The page at
+`/productions/<slug>/` (`/de/produktionen/…`, `/pt/producoes/…`), its
+sitemap entry and its Event for Google follow from that. The "Current"
+mark comes off by itself in the browser after its last day; the next
+build takes it out of the HTML as well.
+
 ---
 
 ## How the hero stencil works

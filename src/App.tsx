@@ -11,6 +11,7 @@ import Footer from './components/Footer'
 import Legal from './components/Legal'
 import VideosPage from './components/VideosPage'
 import VideoPage from './components/VideoPage'
+import ProductionPage from './components/ProductionPage'
 import ContentPage from './components/ContentPage'
 import NotFound from './components/NotFound'
 import { RouteProvider } from './route-context'
@@ -33,6 +34,8 @@ function page(route: Route) {
       return <VideosPage />
     case 'video':
       return <VideoPage video={route.video} />
+    case 'production':
+      return <ProductionPage production={route.production} />
     case 'imprint':
     case 'privacy':
       return <Legal page={route.page} />

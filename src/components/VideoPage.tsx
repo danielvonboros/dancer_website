@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next'
 import PageShell, { PageHeader } from './PageShell'
-import { Facade, videoTitle } from './Videos'
+import { Player, videoTitle } from './Videos'
 import { VideoCard } from './VideosPage'
 import { VIDEOS, watchUrl, type VideoItem } from '../data/media'
-import { usePagePath } from '../route-context'
+import { PRODUCTIONS } from '../data/productions'
+import { usePagePath, useRoute } from '../route-context'
+import { productionPath } from '../routes'
 import type { TKey } from '../i18n'
 
 /**
@@ -14,6 +16,8 @@ import type { TKey } from '../i18n'
 export default function VideoPage({ video }: { video: VideoItem }) {
   const { t } = useTranslation()
   const path = usePagePath()
+  const { lang } = useRoute()
+  const production = PRODUCTIONS.find((p) => p.video === video.key)
   const others = VIDEOS.filter((v) => v.key !== video.key)
   const length = `${Math.floor(video.duration / 60)}:${String(video.duration % 60).padStart(2, '0')}`
 
@@ -34,12 +38,21 @@ export default function VideoPage({ video }: { video: VideoItem }) {
 
         <div className="px-5 pb-20 sm:px-8">
           <div className="mx-auto max-w-6xl">
-            <Facade video={video} eager />
+            <Player video={video} eager />
 
             <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_15rem] lg:gap-16">
-              <p className="prose-col text-lead leading-snug">
-                {t(`videos.items.${video.key}.description` as TKey)}
-              </p>
+              <div className="prose-col">
+                <p className="text-lead leading-snug">
+                  {t(`videos.items.${video.key}.description` as TKey)}
+                </p>
+                {production && (
+                  <p className="mt-6 text-small">
+                    <a className="link-underline" href={productionPath(production, lang)}>
+                      {t('productions.open')}: {t(`productions.items.${production.key}.title` as TKey)}
+                    </a>
+                  </p>
+                )}
+              </div>
               <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 self-start text-small">
                 <dt className="text-chalk">{t('videos.year')}</dt>
                 <dd>{video.year}</dd>
