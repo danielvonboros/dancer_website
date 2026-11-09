@@ -1,6 +1,7 @@
 import type { TFunction } from 'i18next'
 import { pageMeta } from './meta'
-import type { VideoItem } from '../data/media'
+import { VIDEOS, type VideoItem } from '../data/media'
+import { instagramUrl, type Production } from '../data/productions'
 import type { TKey } from '../i18n'
 import {
   alternates,
@@ -8,6 +9,7 @@ import {
   LANGUAGES,
   ORIGIN,
   pagePath,
+  productionPath,
   routePath,
   videoPath,
   type Language,
@@ -23,7 +25,12 @@ export function buildHead(route: Route, t: TFunction): string {
   const meta = pageMeta(route, t)
   const indexable = isIndexable(route)
   const url = ORIGIN + routePath(route)
-  const video = route.page === 'video' ? route.video : null
+  const video =
+    route.page === 'video'
+      ? route.video
+      : route.page === 'production'
+        ? VIDEOS.find((v) => v.key === route.production.video)
+        : undefined
   const image = video
     ? { src: ORIGIN + video.thumb, width: 1280, height: 720, alt: meta.title }
     : {
@@ -42,7 +49,7 @@ export function buildHead(route: Route, t: TFunction): string {
     '<link rel="icon" href="/favicon.ico" sizes="48x48" />',
     '<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />',
     '<link rel="apple-touch-icon" href="/apple-touch-icon.png" />',
-    `<meta property="og:type" content="${route.page === 'home' ? 'profile' : video ? 'video.other' : 'website'}" />`,
+    `<meta property="og:type" content="${route.page === 'home' ? 'profile' : route.page === 'video' ? 'video.other' : 'website'}" />`,
     '<meta property="og:site_name" content="Denison Silva" />',
     `<meta property="og:locale" content="${OG_LOCALE[route.lang]}" />`,
     `<meta property="og:url" content="${url}" />`,
@@ -131,6 +138,11 @@ function structuredData(route: Route, url: string, t: TFunction): object[] {
   if (route.page === 'video') {
     crumbs.push({ name: t('nav.videos'), path: pagePath('videos', route.lang) })
     crumbs.push({ name: t(`videos.items.${route.video.key}.title` as TKey), path: videoPath(route.video, route.lang) })
+  } else if (route.page === 'production') {
+    crumbs.push({
+      name: t(`productions.items.${route.production.key}.title` as TKey),
+      path: productionPath(route.production, route.lang),
+    })
   } else if (route.page !== 'notFound') {
     crumbs.push({ name: t(`pages.labels.${route.page}` as TKey), path: pagePath(route.page, route.lang) })
   }
@@ -145,8 +157,49 @@ function structuredData(route: Route, url: string, t: TFunction): object[] {
     })),
   }
 
-  if (route.page !== 'video') return [...SITE, breadcrumbs]
-  return [...SITE, breadcrumbs, videoObject(route.video, url, t)]
+  if (route.page === 'video') return [...SITE, breadcrumbs, videoObject(route.video, url, t)]
+  if (route.page === 'production') return [...SITE, breadcrumbs, eventObject(route.production, url, t)]
+  return [...SITE, breadcrumbs]
+}
+
+/** The show as an event he performed in — date, place, company. */
+function eventObject(production: Production, url: string, t: TFunction): object {
+  const { presenter, venue } = production
+  const video = VIDEOS.find((v) => v.key === production.video)
+  return {
+    '@type': production.eventType,
+    '@id': `${url}#event`,
+    url,
+    name: t(`productions.items.${production.key}.title` as TKey),
+    description: t(`productions.items.${production.key}.description` as TKey),
+    startDate: production.start,
+    endDate: production.end ?? production.start,
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    location: {
+      '@type': 'Place',
+      name: venue?.name ?? production.city,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: venue?.street,
+        postalCode: venue?.postalCode,
+        addressLocality: production.city,
+        addressCountry: production.countryCode,
+      },
+    },
+    image: [
+      ...(production.photos ?? []).map((photo) => ORIGIN + photo.src),
+      ...(video ? [ORIGIN + video.thumb] : []),
+    ],
+    organizer: {
+      '@type': 'Organization',
+      name: presenter.name,
+      url: presenter.url,
+      sameAs: presenter.instagram ? [instagramUrl(presenter.instagram)] : undefined,
+    },
+    performer: { '@id': PERSON_ID },
+    sameAs: production.website ? [production.website] : undefined,
+  }
 }
 
 /** What Google needs to list a video: the player loads only on click, so this is how it finds it. */

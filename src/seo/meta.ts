@@ -22,6 +22,13 @@ export function pageMeta(route: Route, t: TFunction): PageMeta {
         description: t(`videos.items.${key}.description` as TKey),
       }
     }
+    case 'production': {
+      const key = route.production.key
+      return {
+        title: t(`productions.items.${key}.metaTitle` as TKey),
+        description: t(`productions.items.${key}.description` as TKey),
+      }
+    }
     case 'imprint':
       return { title: `${t('legal.imprintTitle')} — Denison Silva` }
     case 'privacy':

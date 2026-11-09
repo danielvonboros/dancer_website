@@ -45,7 +45,7 @@
   },
   "cv": {
     "title": "Curriculum vitae",
-    "lead": "Twelve engagements, six countries, most recent first.",
+    "lead": "Fourteen engagements, seven countries, most recent first.",
     "filterLabel": "Show",
     "all": "Everything",
     "present": "present",
@@ -60,6 +60,8 @@
       "choreographer": "Choreographer"
     },
     "items": {
+      "berlinballet": "One of the Mice in the midnight battle and the Woodcutter in The Nutcracker at Kino Babylon, where a film becomes a live ballet. World premiere on 18 December 2026.",
+      "cop17": "Ensemble dancer and soloist in the opening show of COP17, the UN Biodiversity Conference — and rehearsal coordination for the group: music, logistics and travel from Berlin to Yerevan and back.",
       "tanzoffensive": "Classical ballet and contemporary dance for mixed-age, mixed-level groups, alongside choreographic work on evening-length productions with artistic director Doris Neff.",
       "tanzkompanie": "Dancer in the operetta Die Csárdásfürstin.",
       "jungestheaterhof": "Ran the ballet, jazz and contemporary programme for more than 80 students, and led inclusive workshops for over 600 children in schools and daycare centres.",
@@ -88,6 +90,15 @@
     "privacy": "Nothing is loaded from YouTube or Vimeo until you press play.",
     "at": "at",
     "items": {
+      "nutcracker_trailer": {
+        "title": "The Nutcracker: trailer",
+        "description": "Trailer for the Berlin Ballet Company’s Nutcracker at Kino Babylon in Berlin, with Denison Silva as one of the Mice and the Woodcutter. World premiere on 18 December 2026."
+      },
+      "cop17_opening": {
+        "title": "COP17 Opening Show, Yerevan",
+        "description": "Recording of the opening show of COP17, the UN Biodiversity Conference, in Yerevan on 18 October 2026 — a show about saving nature. Denison Silva dances in the ensemble; his solo begins at 9:30.",
+        "highlight": "Denison’s solo — from 9:30"
+      },
       "spelunkenwirt": {
         "title": "Spelunkenwirt",
         "description": "Spelunkenwirt, created by Denison Silva as resident choreographer of the North German Performing Arts Youth Company (NYC) in Flensburg, 2025."
@@ -108,6 +119,52 @@
     "year": "Year",
     "place": "Place",
     "length": "Length"
+  },
+  "productions": {
+    "current": "Current",
+    "open": "About the production",
+    "aboutTitle": "The production",
+    "creditsTitle": "Cast & creative team",
+    "creditsNote": "As credited by the production.",
+    "date": "Date",
+    "place": "Venue",
+    "website": "Official page",
+    "video": "Video",
+    "music": "Music",
+    "items": {
+      "nutcracker": {
+        "title": "The Nutcracker",
+        "metaTitle": "The Nutcracker at Kino Babylon Berlin — Denison Silva",
+        "description": "Denison Silva dances one of the Mice and the Woodcutter in the Berlin Ballet Company’s Nutcracker at Kino Babylon, Berlin. World premiere 18 December 2026.",
+        "lead": "Denison Silva as one of the Mice and as the Woodcutter — in the Berlin Ballet Company’s Nutcracker at Kino Babylon, Berlin.",
+        "p1": "Two roles at opposite ends of the evening. As one of the Mice, Denison fights on the Mouse King’s side when the clock strikes midnight: fast, sharp character dancing in a pack, where the timing of the whole group carries the scene. As the Woodcutter he changes register completely — a grounded character role that asks for presence and clear storytelling rather than speed.",
+        "p2": "He knows the work from the inside: he danced The Nutcracker at the Schleswig-Holsteinisches Landestheater in Flensburg. This time it is in his home city, in a production where a film turns into live ballet in a 1920s cinema. Choreography by Alexander Abdukarimov and Arshak Ghalumyan; dates and tickets are on the Berlin Ballet Company’s page.",
+        "dates": "18–20 December 2026",
+        "place": "Kino Babylon, Berlin",
+        "presenterLabel": "Company",
+        "role": "Dancer — Mice, The Woodcutter"
+      },
+      "cop17": {
+        "title": "COP17 Opening Show",
+        "metaTitle": "Denison Silva at the COP17 Opening Show, Yerevan 2026",
+        "description": "Denison Silva danced in the ensemble and a solo at the COP17 opening show in Yerevan on 18 October 2026 — a show about saving nature. Photos, video, credits.",
+        "lead": "Ensemble, a solo and the group’s rehearsal coordination: Denison Silva at the opening show of the UN Biodiversity Conference in Yerevan, 18 October 2026.",
+        "p1": "The show was about saving nature — and about how humanity came to be. It traced how we treat the planet today: using up its resources and destroying it, because people think only of themselves and not of each other, of nature or of the animals they share it with.",
+        "p2": "Denison danced in the ensemble and performed a solo of his own, which begins at 9:30 in the recording below. Off stage he took on the rehearsal coordination studio for the group from Berlin: the music, the logistics and the travel of the dancers to Yerevan and back.",
+        "dates": "18 October 2026",
+        "place": "Yerevan, Armenia",
+        "presenterLabel": "Occasion",
+        "role": "Ensemble dancer, soloist, rehearsal coordination",
+        "photos": {
+          "armsOutstretched": "Denison Silva in a sheer costume, arms spread wide, the ensemble in a V formation behind him — COP17 Opening Show, Yerevan 2026",
+          "splitLeap": "Denison Silva in a split leap mid-air while the other dancers kneel around the edge of the stage — COP17 Opening Show, Yerevan 2026",
+          "ensemblePyramid": "The ensemble of the COP17 Opening Show grouped in a pyramid, Denison Silva bottom left — Yerevan 2026",
+          "soloLily": "Denison Silva’s solo: one arm raised, the other stretched back, the ensemble kneeling around him, bright white light and a giant lily in the set — COP17 Opening Show, Yerevan 2026"
+        }
+      }
+    },
+    "photos": "Photos",
+    "photo": "Open photo"
   },
   "references": {
     "title": "References",

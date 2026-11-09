@@ -18,12 +18,37 @@ export interface Engagement {
   roles: Role[]
   director?: string
   productions?: string[]
+  /** key in PRODUCTIONS (src/data/productions.ts) — links the entry to its own page */
+  production?: string
 }
 
 export const ROLES: Role[] = ['dancer', 'teacher', 'choreographer']
 
 /** Most recent first — the order the page renders. */
 export const ENGAGEMENTS: Engagement[] = [
+  {
+    id: 'berlinballet',
+    org: 'Berlin Ballet Company',
+    city: 'Berlin',
+    country: 'Germany',
+    from: 2026,
+    to: 2026,
+    roles: ['dancer'],
+    director: 'Alexander Abdukarimov',
+    productions: ['The Nutcracker'],
+    production: 'nutcracker',
+  },
+  {
+    id: 'cop17',
+    org: 'COP17 — UN Biodiversity Conference',
+    city: 'Yerevan',
+    country: 'Armenia',
+    from: 2026,
+    to: 2026,
+    roles: ['dancer'],
+    productions: ['COP17 Opening Show'],
+    production: 'cop17',
+  },
   {
     id: 'tanzoffensive',
     org: 'Tanzoffensive Berlin',

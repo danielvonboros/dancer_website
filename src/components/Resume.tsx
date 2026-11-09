@@ -1,13 +1,18 @@
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Section from './Section'
+import CurrentMark from './CurrentMark'
 import { ENGAGEMENTS, EDUCATION, REPERTOIRE, ROLES, type Role } from '../data/cv'
+import { findProduction } from '../data/productions'
+import { useRoute } from '../route-context'
+import { productionPath } from '../routes'
 import type { TKey } from '../i18n'
 
 type Filter = Role | 'all'
 
 export default function Resume() {
   const { t } = useTranslation()
+  const { lang } = useRoute()
   const [filter, setFilter] = useState<Filter>('all')
 
   const shown = useMemo(
@@ -52,27 +57,40 @@ export default function Resume() {
       </div>
 
       <ol className="border-t border-rule">
-        {shown.map((item) => (
-          <li
-            key={item.id}
-            className="grid gap-x-8 gap-y-2 border-b border-rule py-7 sm:grid-cols-[7.5rem_1fr]"
-          >
-            <div>
-              <p className="text-small tabular-nums text-chalk">{span(item.from, item.to)}</p>
-              <p className="mt-1 text-small text-chalk">
-                {item.roles.map((role) => t(`cv.roles.${role}` as const)).join(', ')}
-              </p>
-            </div>
-            <div>
-              <h3 className="text-h3 font-medium leading-tight">{item.org}</h3>
-              <p className="mt-1 text-small text-chalk">
-                {item.city}, {item.country}
-                {item.director && <> — {t('cv.director')}: {item.director}</>}
-              </p>
-              <p className="prose-col mt-3">{t(`cv.items.${item.id}` as TKey)}</p>
-            </div>
-          </li>
-        ))}
+        {shown.map((item) => {
+          const production = item.production ? findProduction(item.production) : undefined
+          return (
+            <li
+              key={item.id}
+              className="grid gap-x-8 gap-y-2 border-b border-rule py-7 sm:grid-cols-[7.5rem_1fr]"
+            >
+              <div>
+                <p className="text-small tabular-nums text-chalk">{span(item.from, item.to)}</p>
+                <p className="mt-1 text-small text-chalk">
+                  {item.roles.map((role) => t(`cv.roles.${role}` as const)).join(', ')}
+                </p>
+              </div>
+              <div>
+                <h3 className="text-h3 font-medium leading-tight">
+                  {item.org}
+                  {production && <CurrentMark until={production.currentUntil} className="ml-3" />}
+                </h3>
+                <p className="mt-1 text-small text-chalk">
+                  {item.city}, {item.country}
+                  {item.director && <> — {t('cv.director')}: {item.director}</>}
+                </p>
+                <p className="prose-col mt-3">{t(`cv.items.${item.id}` as TKey)}</p>
+                {production && (
+                  <p className="mt-3 text-small">
+                    <a className="link-underline" href={productionPath(production, lang)}>
+                      {t('productions.open')}: {t(`productions.items.${production.key}.title` as TKey)}
+                    </a>
+                  </p>
+                )}
+              </div>
+            </li>
+          )
+        })}
       </ol>
 
       {shown.length === 0 && <p className="py-8 text-chalk">{t('cv.empty')}</p>}

@@ -29,9 +29,45 @@ export interface VideoItem {
   uploadDate: string
   /** length in seconds */
   duration: number
+  /**
+   * Second where Denison's own moment starts — a button under the player
+   * starts the video there. Label: videos.items.<key>.highlight
+   */
+  highlight?: number
 }
 
 export const VIDEOS: VideoItem[] = [
+  {
+    key: 'nutcracker_trailer',
+    provider: 'youtube',
+    id: 'S2exQc7UvkQ',
+    thumb: '/media/videos/nutcracker-trailer.jpg',
+    year: 2026,
+    venue: 'Kino Babylon, Berlin',
+    slug: {
+      en: 'nutcracker-trailer-berlin-ballet-company-2026',
+      de: 'nussknacker-trailer-berlin-ballet-company-2026',
+      pt: 'quebra-nozes-trailer-berlin-ballet-company-2026',
+    },
+    uploadDate: '2026-10-07T03:21:20-07:00',
+    duration: 30,
+  },
+  {
+    key: 'cop17_opening',
+    provider: 'youtube',
+    id: 'EvtRwtFDRis',
+    thumb: '/media/videos/cop17-opening-show.jpg',
+    year: 2026,
+    venue: 'COP17, Yerevan',
+    slug: {
+      en: 'cop17-opening-show-yerevan-2026',
+      de: 'cop17-eroeffnungsshow-jerewan-2026',
+      pt: 'cop17-show-de-abertura-erevan-2026',
+    },
+    uploadDate: '2026-10-23T08:41:00-07:00',
+    duration: 3282,
+    highlight: 570,
+  },
   {
     key: 'spelunkenwirt',
     provider: 'youtube',
@@ -85,10 +121,10 @@ export function watchUrl(v: VideoItem): string {
     : `https://vimeo.com/${v.id}`
 }
 
-export function embedUrl(v: VideoItem): string {
+export function embedUrl(v: VideoItem, start?: number): string {
   return v.provider === 'youtube'
-    ? `https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0`
-    : `https://player.vimeo.com/video/${v.id}?autoplay=1&dnt=1`
+    ? `https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0${start ? `&start=${start}` : ''}`
+    : `https://player.vimeo.com/video/${v.id}?autoplay=1&dnt=1${start ? `#t=${start}s` : ''}`
 }
 
 export interface Testimonial {

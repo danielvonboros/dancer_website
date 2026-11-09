@@ -45,7 +45,7 @@
   },
   "cv": {
     "title": "Lebenslauf",
-    "lead": "Zwölf Engagements, sechs Länder, das jüngste zuerst.",
+    "lead": "Vierzehn Engagements, sieben Länder, das jüngste zuerst.",
     "filterLabel": "Zeigen",
     "all": "Alles",
     "present": "heute",
@@ -60,6 +60,8 @@
       "choreographer": "Choreograf"
     },
     "items": {
+      "berlinballet": "Eine der Mäuse in der Mitternachtsschlacht und der Holzfäller im Nussknacker im Kino Babylon, wo aus einem Film ein Live-Ballett wird. Weltpremiere am 18. Dezember 2026.",
+      "cop17": "Ensembletänzer und Solist in der Eröffnungsshow der COP17, der UN-Biodiversitätskonferenz — dazu die Probenkoordination der Gruppe: Musik, Logistik und Reise von Berlin nach Jerewan und zurück.",
       "tanzoffensive": "Klassisches Ballett und zeitgenössischer Tanz für alters- und niveaugemischte Gruppen, dazu choreografische Arbeit an abendfüllenden Produktionen mit der künstlerischen Leiterin Doris Neff.",
       "tanzkompanie": "Tänzer in der Operette Die Csárdásfürstin.",
       "jungestheaterhof": "Leitung des Ballett-, Jazz- und Contemporary-Programms für über 80 Schülerinnen und Schüler sowie inklusive Workshops für mehr als 600 Kinder in Schulen und Kitas.",
@@ -88,6 +90,15 @@
     "privacy": "Von YouTube oder Vimeo wird nichts geladen, bevor Sie auf Abspielen drücken.",
     "at": "am",
     "items": {
+      "nutcracker_trailer": {
+        "title": "Der Nussknacker: Trailer",
+        "description": "Trailer zum Nussknacker der Berlin Ballet Company im Kino Babylon, Berlin — mit Denison Silva als eine der Mäuse und als Holzfäller. Weltpremiere am 18. Dezember 2026."
+      },
+      "cop17_opening": {
+        "title": "COP17-Eröffnungsshow, Jerewan",
+        "description": "Aufzeichnung der Eröffnungsshow der COP17, der UN-Biodiversitätskonferenz, am 18. Oktober 2026 in Jerewan — eine Show über die Rettung der Natur. Denison Silva tanzt im Ensemble; sein Solo beginnt bei 9:30.",
+        "highlight": "Denisons Solo — ab 9:30"
+      },
       "spelunkenwirt": {
         "title": "Spelunkenwirt",
         "description": "Spelunkenwirt – ein Stück, das Denison Silva als Resident Choreograf der North German Performing Arts Youth Company (NYC) in Flensburg geschaffen hat, 2025."
@@ -108,6 +119,52 @@
     "year": "Jahr",
     "place": "Ort",
     "length": "Länge"
+  },
+  "productions": {
+    "current": "Aktuell",
+    "open": "Zur Produktion",
+    "aboutTitle": "Die Produktion",
+    "creditsTitle": "Besetzung & Team",
+    "creditsNote": "So, wie die Produktion sie nennt.",
+    "date": "Termin",
+    "place": "Ort",
+    "website": "Offizielle Seite",
+    "video": "Video",
+    "music": "Musik",
+    "items": {
+      "nutcracker": {
+        "title": "Der Nussknacker",
+        "metaTitle": "Der Nussknacker im Kino Babylon Berlin — Denison Silva",
+        "description": "Denison Silva tanzt eine der Mäuse und den Holzfäller im Nussknacker der Berlin Ballet Company im Kino Babylon, Berlin. Weltpremiere am 18. Dezember 2026.",
+        "lead": "Denison Silva als eine der Mäuse und als Holzfäller — im Nussknacker der Berlin Ballet Company im Kino Babylon, Berlin.",
+        "p1": "Zwei Rollen an entgegengesetzten Enden des Abends. Als eine der Mäuse kämpft Denison auf der Seite des Mausekönigs, wenn es Mitternacht schlägt: schneller, scharfer Charaktertanz im Rudel, bei dem das Timing der ganzen Gruppe die Szene trägt. Als Holzfäller wechselt er das Register vollständig — eine geerdete Charakterrolle, die Präsenz und klares Erzählen verlangt statt Tempo.",
+        "p2": "Er kennt das Stück von innen: Den Nussknacker hat er schon am Schleswig-Holsteinischen Landestheater in Flensburg getanzt. Diesmal in seiner Heimatstadt, in einer Inszenierung, in der ein Film in einem Kino aus den Zwanzigerjahren zum Live-Ballett wird. Choreografie von Alexander Abdukarimov und Arshak Ghalumyan; Termine und Karten stehen auf der Seite der Berlin Ballet Company.",
+        "dates": "18.–20. Dezember 2026",
+        "place": "Kino Babylon, Berlin",
+        "presenterLabel": "Compagnie",
+        "role": "Tänzer — Mice, The Woodcutter"
+      },
+      "cop17": {
+        "title": "COP17-Eröffnungsshow",
+        "metaTitle": "Denison Silva in der COP17-Eröffnungsshow, Jerewan 2026",
+        "description": "Denison Silva tanzte im Ensemble und ein Solo in der COP17-Eröffnungsshow am 18. Oktober 2026 in Jerewan — eine Show über die Rettung der Natur. Fotos, Video, Credits.",
+        "lead": "Ensemble, ein Solo und die Probenkoordination der Gruppe: Denison Silva in der Eröffnungsshow der UN-Biodiversitätskonferenz in Jerewan, 18. Oktober 2026.",
+        "p1": "Die Show handelte von der Rettung der Natur — und davon, wie die Menschheit entstanden ist. Sie zeigte, wie wir heute mit dem Planeten umgehen: wie wir seine Ressourcen verbrauchen und ihn zerstören, weil der Mensch nur an sich denkt und nicht an die anderen, an die Natur und an die Tierwelt.",
+        "p2": "Denison tanzte im Ensemble und ein eigenes Solo, das im Video unten bei 9:30 beginnt. Hinter der Bühne übernahm er die Probenkoordination (Rehearsal Coordination Studio) für die Gruppe aus Berlin: die Musik, die Logistik und die Reise der Tänzerinnen und Tänzer nach Jerewan und zurück.",
+        "dates": "18. Oktober 2026",
+        "place": "Jerewan, Armenien",
+        "presenterLabel": "Anlass",
+        "role": "Ensembletänzer, Solist, Probenkoordination",
+        "photos": {
+          "armsOutstretched": "Denison Silva in einem halbtransparenten Kostüm, die Arme weit ausgebreitet, hinter ihm das Ensemble in V-Formation — COP17-Eröffnungsshow, Jerewan 2026",
+          "splitLeap": "Denison Silva im Spagatsprung in der Luft, die anderen Tänzer knien rund um die Tanzfläche — COP17-Eröffnungsshow, Jerewan 2026",
+          "ensemblePyramid": "Das Ensemble der COP17-Eröffnungsshow als Pyramide gruppiert, Denison Silva unten links — Jerewan 2026",
+          "soloLily": "Denison Silvas Solo: ein Arm nach oben, der andere nach hinten gestreckt, das Ensemble kniet um ihn herum, helles weißes Licht und eine große Lilie in der Kulisse — COP17-Eröffnungsshow, Jerewan 2026"
+        }
+      }
+    },
+    "photos": "Fotos",
+    "photo": "Foto öffnen"
   },
   "references": {
     "title": "Referenzen",
