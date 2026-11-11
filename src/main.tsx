@@ -2,11 +2,13 @@ import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import '@fontsource/anton/400.css'
 import '@fontsource-variable/archivo'
-import './index.css'
+import './theme/global.css'
 import { setupI18n } from './i18n'
 import App from './App'
 import { pageMeta } from './seo/meta'
-import { LANGUAGES, pagePath, parseRoute, resolve, type Route } from './routes'
+import { LANGUAGES } from './content/routes'
+import { pagePath, parseRoute, resolve } from './routes'
+import { type Route } from './types/route'
 
 /**
  * The prerendered page names its own route in #route, so the browser

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { localDay } from '../data/productions'
+import { localDay } from '../utils/localDay'
 
 /**
  * Whether today is on or before `until` (YYYY-MM-DD). The prerendered page

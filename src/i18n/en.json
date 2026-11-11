@@ -7,7 +7,7 @@
   "nav": {
     "about": "About",
     "cv": "CV",
-    "work": "Productions",
+    "work": "Work",
     "videos": "Videos",
     "references": "References",
     "contact": "Contact",
@@ -29,10 +29,10 @@
   },
   "about": {
     "title": "About",
-    "lead": "Fifteen years on stage, and the last six of them in rehearsal rooms with dancers who are only just starting. Both are the same job: finding the movement that says the thing.",
-    "p1": "I trained in São Paulo and Vancouver and joined Ballet Nacional del Sodre in Montevideo under Julio Bocca at twenty. Since then I have danced in Buenos Aires, across France, and in five German houses — Halberstadt, Flensburg, Detmold, Hof and Neustrelitz.",
-    "p2": "Since 2023 most of my work has been choreography and teaching: evening-length productions for youth companies, classical and contemporary classes for children, teenagers and adults, and inclusive workshops in schools and daycare centres. I teach in four languages and fit the training to the dancer in front of me.",
-    "p3": "Discipline first, because discipline is what buys a dancer their freedom. Then storytelling. Then the part that matters most — that they leave the studio a little larger than they walked in.",
+    "lead": "Fifteen years on stage — soloist under Julio Bocca, five German houses, and now Berlin. On stage and in the studio it is the same job: finding the movement that says the thing.",
+    "p1": "I trained in São Paulo and Vancouver and joined Ballet Nacional del Sodre in Montevideo under Julio Bocca at twenty, dancing Balanchine, Duato and Makarova as ensemble dancer and soloist. Then Buenos Aires, a season across France, and five German houses — Halberstadt, Flensburg, Detmold, Hof and Neustrelitz. In 2026: a solo at the opening of the UN Biodiversity Conference in Yerevan, and the Berlin Ballet Company’s Nutcracker.",
+    "p2": "As a choreographer I make evening-length pieces — for youth companies in Flensburg and Hof, for Tanzoffensive Berlin, and The Beauty of Oxum for the company in Detmold — and take each one from the first idea to opening night: repertoire, music, light and costume.",
+    "p3": "I also teach — classical, neoclassical, jazz and contemporary, for children, teenagers and adults, in four languages. Discipline first, because discipline is what buys a dancer their freedom. Then storytelling. Then the part that matters most: that they leave the studio a little larger than they walked in.",
     "factsTitle": "At a glance",
     "born": "Born",
     "bornValue": "6 June 1991",
@@ -77,11 +77,52 @@
     }
   },
   "work": {
-    "title": "Productions",
-    "lead": "The same career told three ways, because most people arrive here looking for one of them.",
-    "dancer": "Dancer in the operetta Die Csárdásfürstin (Deutsche Tanzkompanie), in productions including Die Geschöpfe des Prometheus, Ballet Blanc and chamber-ballet evening formats (Theater Hof), Sacra, The Jungle Book and various ballet galas (Landestheater Detmold), Schwanensee, Heidi — Das Familienballett, the Nutcracker reprise and gala programmes (Schleswig-Holsteinisches Landestheater Flensburg), classical and contemporary repertoire including Hänsel und Gretel and Carmen (Nordharzer Städtebundtheater Halberstadt), a season tour through Paris, Cannes, Nantes, Roubaix, Montpellier and Toulouse (Ballets de France), repertoire by Frederick Ashton (Ballet Nacional de Argentina, Buenos Aires), and works by George Balanchine, Nacho Duato, Mauricio Wainrot, Vicente Nebrada, Anna-Marie Holmes, Silvia Bazilis, Natalia Makarova and Ronald Hynd as ensemble dancer and soloist (Ballet Nacional del Sodre, Montevideo).",
-    "teacher": "Teacher of classical ballet and contemporary dance for mixed-age and mixed-level groups — children, teenagers and adults — in group and private classes, with rehearsal direction for company productions (Tanzoffensive Berlin), coordination of the pedagogical and artistic programme in ballet, jazz and contemporary dance for more than 80 students, plus inclusive workshops for over 600 children in schools and daycare centres (Junges Theater Hof), coaching of young dancers through the technical and artistic demands of each production (North German Performing Arts Youth Company, Flensburg), and guest ballet teaching developing young dancers' technical and artistic skills (Brazil).",
-    "choreographer": "Choreographer for evening-length productions including A Midsummer Night's Dream, developing movement material and contributing to the artistic development of each piece (Tanzoffensive Berlin), Grüne Träume, graue Zukunft as end-of-year production (Junges Theater Hof), Ellis in the Wonder World Water and Spelunkerwirt as resident choreographer with full responsibility for the creative process from repertoire development to music, lighting and costume concept, with an invitation to the Detmold Ballet Gala 2025 (North German Performing Arts Youth Company, Flensburg), The Beauty of Oxum created for the professional company (Landestheater Detmold), and guest choreographic work with young dancers (Brazil)."
+    "title": "Work",
+    "lead": "A selection, most recent first. The complete list is in the CV.",
+    "groups": {
+      "dancer": {
+        "title": "Dancer",
+        "text": "Fifteen years on stage — from Julio Bocca’s Ballet Nacional del Sodre to five German houses, in works by Balanchine, Duato, Ashton and Makarova."
+      },
+      "choreographer": {
+        "title": "Choreographer",
+        "text": "Evening-length pieces for youth companies and a professional ensemble — repertoire, music, light and costume, from the first idea to opening night."
+      }
+    },
+    "items": {
+      "nutcracker": {
+        "title": "The Nutcracker",
+        "part": "One of the Mice and the Woodcutter"
+      },
+      "cop17": {
+        "title": "COP17 Opening Show",
+        "part": "Ensemble and solo"
+      },
+      "prometheus": {
+        "title": "Die Geschöpfe des Prometheus",
+        "part": "Company dancer"
+      },
+      "sodre": {
+        "title": "Balanchine, Duato, Makarova",
+        "part": "Ensemble and soloist under Julio Bocca"
+      },
+      "midsummer": {
+        "title": "A Midsummer Night’s Dream",
+        "part": "Choreography with Doris Neff"
+      },
+      "spelunkenwirt": {
+        "title": "Spelunkenwirt",
+        "part": "Resident choreographer, from idea to premiere"
+      },
+      "ellis": {
+        "title": "Ellis in the Wonder World Water",
+        "part": "Resident choreographer"
+      },
+      "oxum": {
+        "title": "The Beauty of Oxum",
+        "part": "Created for the company"
+      }
+    }
   },
   "videos": {
     "title": "Videos",

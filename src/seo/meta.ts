@@ -1,7 +1,7 @@
 import type { TFunction } from 'i18next'
 import { CONTENT } from '../content/pages'
 import type { TKey } from '../i18n'
-import type { Route } from '../routes'
+import type { Route } from '../types/route'
 
 export interface PageMeta {
   title: string

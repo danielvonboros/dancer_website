@@ -3,9 +3,7 @@ import { initReactI18next } from 'react-i18next'
 import en from './en.json'
 import de from './de.json'
 import pt from './pt.json'
-import type { Language } from '../routes'
-
-export { LANGUAGES, type Language } from '../routes'
+import type { Language } from '../types/route'
 
 /**
  * The language comes from the URL (/de/…, /pt/…), never from the browser:

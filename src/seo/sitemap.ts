@@ -1,4 +1,5 @@
-import { allRoutes, alternates, isIndexable, LANGUAGES, ORIGIN, routePath } from '../routes'
+import { allRoutes, alternates, isIndexable, routePath } from '../routes'
+import { LANGUAGES, ORIGIN } from '../content/routes'
 
 /**
  * Every indexable page in every language, each listing its translations —

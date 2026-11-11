@@ -1,0 +1,38 @@
+/* ---------------------------------------------------------------
+   Design tokens — the only place colours, fonts and the type scale
+   are defined. Tailwind turns each --color-* into utilities
+   (bg-paper, text-chalk, border-rule, …).
+
+   Monochrome by decision: state is shown by inversion (black block /
+   white block). The one colour is violet, shared with dancer.one — it
+   marks Denison himself: his name in a cast list, what he is on stage
+   with right now, the start of his solo, and the hairline under links.
+   Keep it to marks and lines; it never fills a section.
+   --------------------------------------------------------------- */
+@theme {
+  /* Neutrals, tinted a touch toward the violet so the colour belongs. */
+  --color-stage: oklch(0.13 0.008 292);      /* blackout — hero ground, dark sections, footer */
+  --color-scrim: oklch(0.29 0.008 292);      /* poster grey — stencil letter fill, inverted state */
+  --color-paper: oklch(0.982 0.004 292);     /* programme paper — light sections */
+  --color-chalk: oklch(0.52 0.012 292);      /* secondary text on paper — 5.5:1 */
+  --color-chalk-on-stage: oklch(0.7 0.012 292); /* secondary text on stage — 7:1 */
+  --color-rule: oklch(0.88 0.008 292);       /* hairlines on paper */
+
+  /* Violet — the dancer.one season violet and two passes of it. */
+  --color-violet: oklch(0.61 0.205 292);      /* focus ring, marks that are not text */
+  --color-violet-deep: oklch(0.47 0.2 292);   /* text and fills on paper — 7:1 with paper */
+  --color-violet-light: oklch(0.76 0.13 292); /* text and fills on stage — 8:1 with stage */
+  /* "the violet that reads on this ground" — deep on paper, light on stage */
+  --color-signal: var(--color-violet-deep);
+
+  --font-display: 'Anton', 'Arial Narrow', 'Haettenschweiler', sans-serif;
+  --font-body: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+
+  /* perfect-fourth scale (1.333) */
+  --text-micro: 0.75rem;
+  --text-small: 0.8125rem;
+  --text-body: 1.0625rem;
+  --text-lead: 1.375rem;
+  --text-h3: 1.728rem;
+  --text-h2: 2.986rem;
+}
