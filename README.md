@@ -17,6 +17,94 @@ workflow installs with `--frozen-lockfile` and fails without it.
 
 ---
 
+## Version and changelog
+
+Current version: **3.0.1** (also in `package.json`).
+
+Every change gets a new version number and an entry here, newest first:
+
+- **Major** (first number) — a relaunch: new address structure, new look or
+  new code structure, e.g. 3.0.0 → 4.0.0
+- **Minor** (second number) — something new: a page, a section, a feature,
+  e.g. 3.0.0 → 3.1.0
+- **Fix** (third number) — a correction or small adjustment, e.g. 3.0.0 → 3.0.1
+
+Versions up to 3.0.0 were assigned afterwards, from the git history.
+`main` (what is live) is at 1.2.1; everything from 1.3.0 on is on the
+feature branches and not merged yet.
+
+### 3.0.1 — 2026-11-11
+
+- Version numbers and this changelog introduced; version in `package.json`.
+
+### 3.0.0 — 2026-11-11 · `62e0566` · Major
+
+- Code restructured to the pixelgeselle layout: `pages/`, `sections/`, one
+  folder per component, data in `content/`, types in `types/`, helpers in
+  `utils/`, design values only in `theme/`. Every code file has one job.
+- Violet from dancer.one as the one highlight colour, always marking
+  Denison himself: his part, his row in cast lists, "Current", his solo,
+  link underlines, focus ring.
+- New Work section: four pieces as a dancer, four as a choreographer, each
+  with his part. Replaces the three long text blocks of "Productions".
+- About now opens with the stage; teaching follows.
+- Hero shows the current production at the bottom left, above the role
+  line; it disappears after its last day.
+- CV role filter in violet: active filter as a violet block, light violet
+  on hover.
+- Muted text darker: contrast 5.2:1 instead of 3.4:1 (WCAG AA everywhere).
+- Fixed an endless re-measuring loop in the hero stencil; `yarn lint`
+  now really type-checks.
+
+### 2.1.0 — 2026-11-09 · `ba10585` · Minor
+
+- Own pages for the COP17 Opening Show in Yerevan and The Nutcracker
+  (Berlin Ballet Company), each with description, facts and full credits.
+- Photo gallery with a full-width view on the COP17 page; button that
+  starts the COP17 video at Denison's solo (9:30).
+- Both productions in the CV, "Current" mark for The Nutcracker until
+  20.12.2026; both videos on the home page and the video page.
+
+### 2.0.0 — 2026-11-06 · `cf52533` · Major
+
+- From one page to many: every page has its own address in each language
+  (`/`, `/de/`, `/pt/`) and is prerendered to plain HTML.
+- Video page and one page per video; draft pages for classes, workshops
+  and choreography; 404 page; old `#legal/…` links redirect.
+- Sitemap generated on every build, hreflang and structured data per page.
+
+### 1.3.0 — 2026-11-05 · `c12ae38` · Minor
+
+- All host variants redirect to https://www.denisonsilva.com.
+- robots.txt, sitemap.xml, Open Graph image and favicons.
+- Titles and descriptions name ballet, jazz and Berlin in all three languages;
+  Person and WebSite structured data.
+
+### 1.2.1 — 2026-10-08 · `ab7f4bc` · Fix
+
+- New phone number in the contact details and the imprint.
+
+### 1.2.0 — 2026-10-08 · `b638668` · Minor
+
+- Imprint and privacy policy in Portuguese.
+
+### 1.1.1 — 2026-10-02 · `f841928` · Fix
+
+- `yarn.lock` added, so the deploy can install dependencies.
+
+### 1.1.0 — 2026-10-02 · `b13a179` · Minor
+
+- The real videos (Spelunkenwirt, creative process, Pandora's Box) and the
+  hero background video.
+
+### 1.0.0 — 2026-09-25 · `cefad56`
+
+- First version: one page with the stencil hero, about, CV with role
+  filter, productions, videos, references and contact form, in English,
+  German and Portuguese; deploy to all-inkl.
+
+---
+
 ## Why Vite and not Next.js
 
 Vite and Next.js are alternative build systems, so the brief's "Vite,
