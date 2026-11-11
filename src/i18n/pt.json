@@ -7,7 +7,7 @@
   "nav": {
     "about": "Sobre",
     "cv": "Currículo",
-    "work": "Produções",
+    "work": "Trabalhos",
     "videos": "Vídeos",
     "references": "Referências",
     "contact": "Contato",
@@ -29,10 +29,10 @@
   },
   "about": {
     "title": "Sobre",
-    "lead": "Quinze anos de palco, os últimos seis deles em salas de ensaio com bailarinos que estão apenas começando. É o mesmo trabalho nos dois casos: encontrar o movimento que diz a coisa.",
-    "p1": "Formei-me em São Paulo e em Vancouver e entrei no Ballet Nacional del Sodre, em Montevidéu, sob a direção de Julio Bocca, aos vinte anos. Desde então dancei em Buenos Aires, por toda a França e em cinco teatros alemães — Halberstadt, Flensburg, Detmold, Hof e Neustrelitz.",
-    "p2": "Desde 2023 meu trabalho é sobretudo coreografia e ensino: produções de noite inteira para companhias jovens, aulas de clássico e contemporâneo para crianças, adolescentes e adultos, e oficinas inclusivas em escolas e creches. Ensino em quatro idiomas e ajusto o treino a quem está na minha frente.",
-    "p3": "Disciplina primeiro, porque é ela que compra a liberdade do bailarino. Depois a narrativa. E então o que mais importa: que ele saia da sala um pouco maior do que entrou.",
+    "lead": "Quinze anos no palco — solista com Julio Bocca, cinco teatros alemães e agora Berlim. No palco e no estúdio é o mesmo trabalho: encontrar o movimento que diz a coisa certa.",
+    "p1": "Estudei em São Paulo e Vancouver e entrei para o Ballet Nacional del Sodre, em Montevidéu, sob a direção de Julio Bocca aos vinte anos, dançando Balanchine, Duato e Makarova no corpo de baile e como solista. Depois Buenos Aires, uma temporada pela França e cinco teatros alemães — Halberstadt, Flensburg, Detmold, Hof e Neustrelitz. Em 2026: um solo na abertura da Conferência da ONU sobre Biodiversidade em Erevan e O Quebra-Nozes da Berlin Ballet Company.",
+    "p2": "Como coreógrafo, crio espetáculos completos — para companhias jovens em Flensburg e Hof, para a Tanzoffensive Berlin e The Beauty of Oxum para a companhia de Detmold — e acompanho cada um da primeira ideia à estreia: repertório, música, luz e figurino.",
+    "p3": "Também dou aulas — clássico, neoclássico, jazz e contemporâneo, para crianças, adolescentes e adultos, em quatro idiomas. Primeiro a disciplina, porque é a disciplina que dá ao bailarino a sua liberdade. Depois a narrativa. Depois o que mais importa: que saiam do estúdio um pouco maiores do que entraram.",
     "factsTitle": "Em resumo",
     "born": "Nascimento",
     "bornValue": "6 de junho de 1991",
@@ -77,11 +77,52 @@
     }
   },
   "work": {
-    "title": "Produções",
-    "lead": "A mesma carreira contada de três maneiras, porque quase todo mundo chega aqui procurando uma delas.",
-    "dancer": "Bailarino na opereta Die Csárdásfürstin (Deutsche Tanzkompanie), em produções como Die Geschöpfe des Prometheus, Ballet Blanc e noites de balé de câmara (Theater Hof), Sacra, O Livro da Selva e diversas galas de balé (Landestheater Detmold), O Lago dos Cisnes, Heidi — Das Familienballett, a remontagem de O Quebra-Nozes e programas de gala (Schleswig-Holsteinisches Landestheater Flensburg), repertório clássico e contemporâneo incluindo João e Maria e Carmen (Nordharzer Städtebundtheater Halberstadt), turnê de temporada por Paris, Cannes, Nantes, Roubaix, Montpellier e Toulouse (Ballets de France), repertório de Frederick Ashton (Ballet Nacional de Argentina, Buenos Aires) e obras de George Balanchine, Nacho Duato, Mauricio Wainrot, Vicente Nebrada, Anna-Marie Holmes, Silvia Bazilis, Natalia Makarova e Ronald Hynd como bailarino do elenco e solista (Ballet Nacional del Sodre, Montevidéu).",
-    "teacher": "Professor de balé clássico e dança contemporânea para turmas de idades e níveis variados — crianças, adolescentes e adultos — em aulas coletivas e particulares, com direção de ensaios para produções da companhia (Tanzoffensive Berlin), coordenação do programa pedagógico e artístico de balé, jazz e contemporâneo para mais de 80 alunos, além de oficinas inclusivas para mais de 600 crianças em escolas e creches (Junges Theater Hof), acompanhamento de jovens bailarinos nas exigências técnicas e artísticas de cada produção (North German Performing Arts Youth Company, Flensburg) e aulas de balé como professor convidado, desenvolvendo a técnica e a expressão de jovens bailarinos (Brasil).",
-    "choreographer": "Coreógrafo de produções de noite inteira como Sonho de uma Noite de Verão, desenvolvendo o material de movimento e contribuindo para a construção artística de cada peça (Tanzoffensive Berlin), Grüne Träume, graue Zukunft como produção de fim de ano (Junges Theater Hof), Ellis in the Wonder World Water e Spelunkerwirt como coreógrafo residente, com responsabilidade integral pelo processo criativo, do desenvolvimento do repertório aos conceitos de música, luz e figurino, com convite para a Gala de Balé de Detmold 2025 (North German Performing Arts Youth Company, Flensburg), The Beauty of Oxum criado para a companhia profissional (Landestheater Detmold) e trabalhos coreográficos como convidado com jovens bailarinos (Brasil)."
+    "title": "Trabalhos",
+    "lead": "Uma seleção, do mais recente ao mais antigo. A lista completa está no currículo.",
+    "groups": {
+      "dancer": {
+        "title": "Bailarino",
+        "text": "Quinze anos no palco — do Ballet Nacional del Sodre de Julio Bocca a cinco teatros alemães, em obras de Balanchine, Duato, Ashton e Makarova."
+      },
+      "choreographer": {
+        "title": "Coreógrafo",
+        "text": "Espetáculos completos para companhias jovens e uma companhia profissional — repertório, música, luz e figurino, da primeira ideia à estreia."
+      }
+    },
+    "items": {
+      "nutcracker": {
+        "title": "O Quebra-Nozes",
+        "part": "Um dos Ratos e o Lenhador"
+      },
+      "cop17": {
+        "title": "Show de abertura da COP17",
+        "part": "Conjunto e solo"
+      },
+      "prometheus": {
+        "title": "Die Geschöpfe des Prometheus",
+        "part": "Bailarino da companhia"
+      },
+      "sodre": {
+        "title": "Balanchine, Duato, Makarova",
+        "part": "Corpo de baile e solista com Julio Bocca"
+      },
+      "midsummer": {
+        "title": "A Midsummer Night’s Dream",
+        "part": "Coreografia com Doris Neff"
+      },
+      "spelunkenwirt": {
+        "title": "Spelunkenwirt",
+        "part": "Coreógrafo residente, da ideia à estreia"
+      },
+      "ellis": {
+        "title": "Ellis in the Wonder World Water",
+        "part": "Coreógrafo residente"
+      },
+      "oxum": {
+        "title": "The Beauty of Oxum",
+        "part": "Criado para a companhia"
+      }
+    }
   },
   "videos": {
     "title": "Vídeos",

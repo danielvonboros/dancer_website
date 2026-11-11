@@ -7,7 +7,7 @@
   "nav": {
     "about": "Über mich",
     "cv": "Lebenslauf",
-    "work": "Produktionen",
+    "work": "Arbeiten",
     "videos": "Videos",
     "references": "Referenzen",
     "contact": "Kontakt",
@@ -29,10 +29,10 @@
   },
   "about": {
     "title": "Über mich",
-    "lead": "Fünfzehn Jahre auf der Bühne, die letzten sechs davon in Probenräumen mit Tänzerinnen und Tänzern, die gerade erst anfangen. Beides ist dieselbe Arbeit: die Bewegung finden, die etwas sagt.",
-    "p1": "Ausgebildet in São Paulo und Vancouver, mit zwanzig ins Ballet Nacional del Sodre in Montevideo unter Julio Bocca. Seitdem habe ich in Buenos Aires getanzt, quer durch Frankreich und an fünf deutschen Häusern — Halberstadt, Flensburg, Detmold, Hof und Neustrelitz.",
-    "p2": "Seit 2023 liegt der Schwerpunkt auf Choreografie und Unterricht: abendfüllende Produktionen für Jugendcompagnien, klassischer und zeitgenössischer Unterricht für Kinder, Jugendliche und Erwachsene sowie inklusive Workshops in Schulen und Kitas. Ich unterrichte in vier Sprachen und richte das Training nach den Menschen im Raum aus.",
-    "p3": "Disziplin zuerst, denn Disziplin erkauft einer Tänzerin ihre Freiheit. Dann das Erzählen. Und dann das, worauf es am meisten ankommt: dass sie den Saal ein Stück größer verlässt, als sie ihn betreten hat.",
+    "lead": "Fünfzehn Jahre auf der Bühne — Solist unter Julio Bocca, fünf deutsche Häuser, und jetzt Berlin. Auf der Bühne wie im Studio ist es dieselbe Arbeit: die Bewegung finden, die das Richtige sagt.",
+    "p1": "Ich habe in São Paulo und Vancouver gelernt und bin mit zwanzig unter Julio Bocca zum Ballet Nacional del Sodre in Montevideo gekommen, wo ich Balanchine, Duato und Makarova im Ensemble und als Solist getanzt habe. Dann Buenos Aires, eine Spielzeit quer durch Frankreich und fünf deutsche Häuser — Halberstadt, Flensburg, Detmold, Hof und Neustrelitz. 2026: ein Solo bei der Eröffnung der UN-Biodiversitätskonferenz in Jerewan und der Nussknacker der Berlin Ballet Company.",
+    "p2": "Als Choreograf mache ich abendfüllende Stücke — für Jugendkompanien in Flensburg und Hof, für die Tanzoffensive Berlin und The Beauty of Oxum für die Compagnie in Detmold — und begleite jedes von der ersten Idee bis zur Premiere: Repertoire, Musik, Licht und Kostüm.",
+    "p3": "Außerdem unterrichte ich — klassisch, neoklassisch, Jazz und zeitgenössisch, für Kinder, Jugendliche und Erwachsene, in vier Sprachen. Zuerst Disziplin, denn Disziplin ist das, was einem Tänzer seine Freiheit verschafft. Dann das Erzählen. Dann das Wichtigste: dass sie das Studio ein Stück größer verlassen, als sie es betreten haben.",
     "factsTitle": "Kurz gefasst",
     "born": "Geboren",
     "bornValue": "6. Juni 1991",
@@ -77,11 +77,52 @@
     }
   },
   "work": {
-    "title": "Produktionen",
-    "lead": "Dieselbe Laufbahn, dreimal erzählt — weil die meisten hier genau eine davon suchen.",
-    "dancer": "Tänzer in der Operette Die Csárdásfürstin (Deutsche Tanzkompanie), in Produktionen wie Die Geschöpfe des Prometheus, Ballet Blanc und Kammerballettabenden (Theater Hof), Sacra, Das Dschungelbuch und verschiedenen Ballettgalas (Landestheater Detmold), Schwanensee, Heidi — Das Familienballett, der Nussknacker-Wiederaufnahme und Galaprogrammen (Schleswig-Holsteinisches Landestheater Flensburg), klassischem und zeitgenössischem Repertoire mit Hänsel und Gretel und Carmen (Nordharzer Städtebundtheater Halberstadt), einer Spielzeit-Tournee durch Paris, Cannes, Nantes, Roubaix, Montpellier und Toulouse (Ballets de France), Repertoire von Frederick Ashton (Ballet Nacional de Argentina, Buenos Aires) sowie Werken von George Balanchine, Nacho Duato, Mauricio Wainrot, Vicente Nebrada, Anna-Marie Holmes, Silvia Bazilis, Natalia Makarova und Ronald Hynd als Ensembletänzer und Solist (Ballet Nacional del Sodre, Montevideo).",
-    "teacher": "Dozent für klassisches Ballett und zeitgenössischen Tanz für alters- und niveaugemischte Gruppen — Kinder, Jugendliche und Erwachsene — in Gruppen- und Einzelunterricht, mit Probenleitung für Compagnie-Produktionen (Tanzoffensive Berlin), Koordination des pädagogischen und künstlerischen Programms in Ballett, Jazz und Contemporary für über 80 Schülerinnen und Schüler sowie inklusiven Workshops für mehr als 600 Kinder in Schulen und Kitas (Junges Theater Hof), Coaching junger Tänzerinnen und Tänzer durch die technischen und künstlerischen Anforderungen jeder Produktion (North German Performing Arts Youth Company, Flensburg) und Gastunterricht im Ballett zur Entwicklung technischer und künstlerischer Fähigkeiten junger Tänzerinnen und Tänzer (Brasilien).",
-    "choreographer": "Choreograf abendfüllender Produktionen wie Ein Sommernachtstraum, mit Entwicklung des Bewegungsmaterials und Beitrag zur künstlerischen Entwicklung jedes Stücks (Tanzoffensive Berlin), Grüne Träume, graue Zukunft als Jahresabschlussproduktion (Junges Theater Hof), Ellis in the Wonder World Water und Spelunkerwirt als Hauschoreograf mit voller Verantwortung für den kreativen Prozess von der Repertoireentwicklung bis zu Musik-, Licht- und Kostümkonzept, mit einer Einladung zur Detmolder Ballettgala 2025 (North German Performing Arts Youth Company, Flensburg), The Beauty of Oxum für die professionelle Compagnie (Landestheater Detmold) sowie choreografische Gastarbeiten mit jungen Tänzerinnen und Tänzern (Brasilien)."
+    "title": "Arbeiten",
+    "lead": "Eine Auswahl, die jüngste zuerst. Die vollständige Liste steht im Lebenslauf.",
+    "groups": {
+      "dancer": {
+        "title": "Tänzer",
+        "text": "Fünfzehn Jahre auf der Bühne — vom Ballet Nacional del Sodre unter Julio Bocca bis zu fünf deutschen Häusern, in Werken von Balanchine, Duato, Ashton und Makarova."
+      },
+      "choreographer": {
+        "title": "Choreograf",
+        "text": "Abendfüllende Stücke für Jugendkompanien und ein Profi-Ensemble — Repertoire, Musik, Licht und Kostüm, von der ersten Idee bis zur Premiere."
+      }
+    },
+    "items": {
+      "nutcracker": {
+        "title": "Der Nussknacker",
+        "part": "Eine der Mäuse und der Holzfäller"
+      },
+      "cop17": {
+        "title": "COP17-Eröffnungsshow",
+        "part": "Ensemble und Solo"
+      },
+      "prometheus": {
+        "title": "Die Geschöpfe des Prometheus",
+        "part": "Ensembletänzer"
+      },
+      "sodre": {
+        "title": "Balanchine, Duato, Makarova",
+        "part": "Ensemble und Solist unter Julio Bocca"
+      },
+      "midsummer": {
+        "title": "A Midsummer Night’s Dream",
+        "part": "Choreografie mit Doris Neff"
+      },
+      "spelunkenwirt": {
+        "title": "Spelunkenwirt",
+        "part": "Hauschoreograf, von der Idee bis zur Premiere"
+      },
+      "ellis": {
+        "title": "Ellis in the Wonder World Water",
+        "part": "Hauschoreograf"
+      },
+      "oxum": {
+        "title": "The Beauty of Oxum",
+        "part": "Für die Compagnie kreiert"
+      }
+    }
   },
   "videos": {
     "title": "Videos",

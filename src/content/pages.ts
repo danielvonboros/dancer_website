@@ -1,4 +1,5 @@
-import type { Language, PageId } from '../routes'
+import type { Language } from '../types/route'
+import type { ContentPageId, PageContent } from '../types/contentPage'
 
 /**
  * Text for the pages beyond the home page, one entry per language.
@@ -9,25 +10,6 @@ import type { Language, PageId } from '../routes'
  * `yarn dev` marks it, and the page stays a draft (see PAGES in
  * src/routes.ts) until the gaps are filled.
  */
-export interface PageContent {
-  /** <title> — about 60 characters, main search term first */
-  title: string
-  /** meta description — about 150 characters */
-  description: string
-  h1: string
-  lead: string
-  sections: ContentSection[]
-}
-
-export interface ContentSection {
-  heading: string
-  paragraphs?: string[]
-  items?: string[]
-  link?: { label: string; href: string }
-}
-
-export type ContentPageId = Exclude<PageId, 'home' | 'videos' | 'imprint' | 'privacy'>
-
 const WORKS = [
   'A Midsummer Night’s Dream — Tanzoffensive Berlin',
   'Grüne Träume, graue Zukunft — Junges Theater Hof',

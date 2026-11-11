@@ -3,7 +3,8 @@ import { renderToString } from 'react-dom/server'
 import App from './App'
 import { setupI18n } from './i18n'
 import { buildHead } from './seo/head'
-import { allRoutes, routePath, serializeRoute, type Route } from './routes'
+import { allRoutes, routePath, serializeRoute } from './routes'
+import { type Route } from './types/route'
 
 export { sitemapXml } from './seo/sitemap'
 

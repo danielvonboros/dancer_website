@@ -28,31 +28,98 @@ pages it has are prerendered by a 40-line script instead of a framework
 
 ## Where things live
 
+The structure follows the pixelgeselle repository: one folder per
+component, sections built from components, pages built from sections.
+Every code file has one job and stays under 300 lines.
+
 ```
 src/
-  data/cv.ts        engagements, training, repertoire, contact details
-  data/media.ts     video ids, testimonials
-  data/legal.ts     everything the Impressum and privacy page print
+  App.tsx           picks the page for the current route
+  routes.ts         paths of every page in every language, and back
+  main.tsx          browser entry: hydrates the prerendered page
+  entry-server.tsx  build entry: renders one page to HTML
+  pages/            whole pages, composed from sections
+  sections/         page sections, one folder each, composed from components
+  components/       reusable building blocks, one folder each
+  content/          all data: CV, videos, productions, work, legal texts, routes
+  i18n/en|de|pt     all copy; en.json is the source of truth
+  types/            the shape of the data in content/
+  hooks/            shared React hooks
+  utils/            small helper functions, one per file
+  seo/              <head>, structured data (JSON-LD) and sitemap
+  theme/            tokens.css (colours, fonts, type scale) and global.css
 public/
   api/contact.php   the contact form's backend (see below)
   .htaccess         HTTPS, caching and headers for Apache
-  i18n/en|de|pt     all copy; en.json is the source of truth
-  components/
-    Stencil.tsx     the wordmark cut out of a plate (see below)
-    Hero.tsx        video + stencil + role line
-    Section.tsx     the left-rail / content split every section uses
-    Resume.tsx      the timeline, with the role filter
-    Productions.tsx the three role summaries
-    Videos.tsx      click-to-load embeds
-    References.tsx  directors, or testimonials once you have them
-    Contact.tsx     form with honeypot and mailto fallback
-    Legal.tsx       Impressum and privacy
+  media/            hero video, portrait, video stills, production photos
 ```
 
+Pages, top to bottom:
+
+| Page | What is on it |
+| ---- | ------------- |
+| `Home` | Hero, About, Work, CV, Videos, References, Contact |
+| `VideosPage` | every video as a card |
+| `VideoPage` | one video with player, description and facts |
+| `ProductionPage` | one production: about, photos, video, credits |
+| `ContentPage` | class, workshop and choreography pages (drafts) |
+| `LegalPage` | imprint and privacy |
+| `NotFound` | the 404 page |
+
+Sections: `hero`, `about`, `work`, `resume` (the CV), `videos`,
+`references`, `contact`, `productionDetail` (the four parts of a
+production page) and `contentBlock` (one block of a content page).
+
+Reusable components:
+
+| Component | Purpose |
+| --------- | ------- |
+| `Section` | the left-rail / content split every section uses; `tone` paper or stage, `spacing` roomy or compact |
+| `PageShell` | nav, main and footer around every page except the home page |
+| `PageHeader` | a page's h1 and lead |
+| `Nav` | top bar with the section links; the active one is underlined in violet |
+| `Footer` | legal links, email, page list |
+| `LanguageSwitcher` | EN / DE / PT, each a real link to the same page |
+| `SkipLink` | keyboard link past the hero |
+| `Stencil` | the name cut out of a black plate over the hero video (see below) |
+| `NowOnStage` | the line in the hero with the current production |
+| `CurrentMark` | the violet "Current" block; disappears after its last day |
+| `WorkCard` | one piece of work: photo or outline word, house, title, his part |
+| `EngagementItem` | one station of the CV |
+| `RoleFilter` | dancer / teacher / choreographer filter of the CV |
+| `EducationList`, `RepertoireList` | training and danced choreographers, under the CV |
+| `FactList` | label and value pairs: year, place, date, role |
+| `Breadcrumb` | "Home / Videos" above a page title |
+| `CreditList`, `PersonName` | cast and team of a production; Denison's row in violet |
+| `Gallery` | row of photos, full-width view on click |
+| `VideoFacade` | still image that turns into the player on click |
+| `VideoPlayer` | `VideoFacade` plus the button that jumps to Denison's moment |
+| `VideoCard` | a video as a link to its own page |
+| `ExternalLink` | link to another site, opens in a new tab |
+| `LegalSection` | one heading of the imprint or privacy page |
+| `RouteProvider` | makes the current route available to `useRoute()` |
+
 Content is data, not markup. To add an engagement, add an entry to
-`ENGAGEMENTS` in `src/data/cv.ts` and one line under `cv.items.<id>` in
-each of the three locale files. Nothing else changes: the timeline, the
-role filter and the references list all read from the same array.
+`ENGAGEMENTS` in `src/content/cv.ts` and one line under `cv.items.<id>`
+in each of the three locale files. Nothing else changes: the timeline,
+the role filter and the references list all read from the same array.
+
+**The Work section** (`src/content/work.ts`) is a selection, not the CV:
+four pieces as a dancer, four as a choreographer, each with his part in
+it. A piece without a photo shows its name in outline type, like the
+hero. When Denison sends a still of himself in one of them, put it in
+`public/media/` and set `image`.
+
+### Colour
+
+Black, grey and paper white, plus one colour: the violet of dancer.one
+(`oklch(0.61 0.205 292)`), so both sites belong together. Violet always
+means "Denison": his part on a work card, his row in a cast list, the
+"Current" mark, the jump to his solo, the underline of links and the
+focus ring. It never fills a section. All values are in
+`src/theme/tokens.css`; on dark grounds (`bg-stage`, `bg-scrim`) the
+muted grey and the violet switch to lighter versions automatically, so
+every text stays at WCAG AA contrast or better.
 
 ---
 
@@ -60,9 +127,11 @@ role filter and the references list all read from the same array.
 
 ```
 src/
-  routes.ts           every page and its path in en / de / pt
+  content/routes.ts   every page and its slug in en / de / pt
+  routes.ts           turns those into paths, and paths back into pages
   content/pages.ts    text of the class, workshop and choreography pages
-  seo/head.ts         title, canonical, hreflang, Open Graph, JSON-LD
+  seo/head.ts         title, canonical, hreflang, Open Graph
+  seo/structuredData.ts  JSON-LD: person, breadcrumb, video or event
   seo/sitemap.ts      sitemap.xml, generated on every build
   entry-server.tsx    renders one route to HTML
 scripts/prerender.mjs writes dist/<path>/index.html for every route
@@ -76,24 +145,24 @@ plain `<a>` tags; there is no client-side router and Apache needs no
 rewrite rules. The language comes from the path, never from the browser.
 
 **Publishing a draft page.** The class, workshop, choreography and dancer
-pages are `draft: true` in `PAGES` (`src/routes.ts`): `yarn dev` shows
+pages are `draft: true` in `PAGES` (`src/content/routes.ts`): `yarn dev` shows
 them, `yarn build` leaves them out. Write the text in
 `src/content/pages.ts` (gaps are marked in `yarn dev`), then delete the
 `draft` flag — the page is built, listed in the sitemap and linked from
 the footer. The dancer page reuses the About, CV and References sections,
 so publish it together with a slimmer home page to avoid duplicate text.
 
-**Adding a video.** Add an entry to `VIDEOS` in `src/data/media.ts` (id,
+**Adding a video.** Add an entry to `VIDEOS` in `src/content/videos.ts` (id,
 slug per language, upload date and length from YouTube, a 16:9 still in
 `public/media/videos/`) and `videos.items.<key>.title` / `.description`
 in the three locale files. Its own page, its card and its VideoObject
 for Google follow from that.
 
 **Adding a production.** Add an entry to `PRODUCTIONS` in
-`src/data/productions.ts` (slug per language, dates, venue, credits,
+`src/content/productions.ts` (slug per language, dates, venue, credits,
 optionally a video key and `currentUntil` for the "Current" mark) and
 `productions.items.<key>` in the three locale files. Point its CV entry
-in `src/data/cv.ts` at it with `production: '<key>'`. The page at
+in `src/content/cv.ts` at it with `production: '<key>'`. The page at
 `/productions/<slug>/` (`/de/produktionen/…`, `/pt/producoes/…`), its
 sitemap entry and its Event for Google follow from that. The "Current"
 mark comes off by itself in the browser after its last day; the next
@@ -158,7 +227,7 @@ both cases, so it has to look good on its own.
 
 ## Before it goes live
 
-- **`src/data/legal.ts`** has three TODOs: street and house number, the
+- **`src/content/legal.ts`** has three TODOs: street and house number, the
   photographer's credit, and the log retention period. A German Impressum
   without a deliverable postal address is the most common reason a
   freelance site gets an Abmahnung. A c/o address is fine; a PO box is not.
@@ -169,9 +238,9 @@ both cases, so it has to look good on its own.
 - **Contact form.** Create the mailbox `contact@denisonsilva.com` in KAS
   before the first real test — `contact.php` sends from and to it.
 - **Privacy page.** Conclude the AV-Vertrag in the all-inkl Members area,
-  copy the exact company name into `host` in `src/data/legal.ts`, and set
+  copy the exact company name into `host` in `src/content/legal.ts`, and set
   `logDays` to what KAS says about log retention.
-- **Testimonials.** `TESTIMONIALS` in `src/data/media.ts` is empty on
+- **Testimonials.** `TESTIMONIALS` in `src/content/testimonials.ts` is empty on
   purpose — fill it only with quotes you have written permission to
   publish. Until then the section shows the directors you worked under,
   which is what a theatre wants to see anyway.
